@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil - Test Tailwind</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-whiteMain min-h-screen font-sans">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-redMain to-orangeMain text-white shadow-3xl">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">Bienvenue sur ma Page d'Accueil</h1>
+            <p class="text-gray-50 mt-2">Test de Tailwind CSS</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-xl">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex space-x-6">
+                <li><a href="#" class="text-redMain hover:text-orangeMain font-semibold transition duration-300">Accueil</a></li>
+                <li><a href="#" class="text-blackMain hover:text-redMain transition duration-300">À propos</a></li>
+                <li><a href="#" class="text-blackMain hover:text-redMain transition duration-300">Services</a></li>
+                <li><a href="#" class="text-blackMain hover:text-redMain transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-greenMain to-orangeMain rounded-4xl shadow-3xl p-8 mb-8 text-white">
+            <h2 class="text-4xl font-bold mb-4">Section Hero</h2>
+            <p class="text-lg mb-6">Ceci est un exemple de contenu avec un dégradé de couleurs Tailwind.</p>
+            <button class="bg-white text-greenMain px-6 py-3 rounded-lg font-semibold hover:bg-whiteMain hover:shadow-xl cursor-pointer transition duration-300 transform hover:scale-105">
+                Commencer
+            </button>
+        </section>
+
+        <!-- Cards Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-4xl shadow-xl p-6 hover:shadow-3xl transition duration-300 transform hover:-translate-y-2 cursor-grab">
+                <div class="bg-redMain w-12 h-12 rounded-full flex items-center justify-center mb-4 animate-pulse-fast">
+                    <span class="text-white text-2xl">🚀</span>
+                </div>
+                <h3 class="text-xl font-bold text-blackMain mb-2">Rapide</h3>
+                <p class="text-gray-600">Performance optimale avec Tailwind CSS.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-4xl shadow-xl p-6 hover:shadow-3xl transition duration-300 transform hover:-translate-y-2 cursor-grab">
+                <div class="bg-greenMain w-12 h-12 rounded-full flex items-center justify-center mb-4 animate-bounce-slow">
+                    <span class="text-white text-2xl">✨</span>
+                </div>
+                <h3 class="text-xl font-bold text-blackMain mb-2">Moderne</h3>
+                <p class="text-gray-600">Design contemporain et responsive.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-4xl shadow-xl p-6 hover:shadow-3xl transition duration-300 transform hover:-translate-y-2 cursor-grab">
+                <div class="bg-orangeMain w-12 h-12 rounded-full flex items-center justify-center mb-4 animate-spin-slow">
+                    <span class="text-white text-2xl">💡</span>
+                </div>
+                <h3 class="text-xl font-bold text-blackMain mb-2">Flexible</h3>
+                <p class="text-gray-600">Personnalisation facile et intuitive.</p>
+            </div>
+        </section>
+
+        <!-- Alert Box -->
+        <div class="bg-greenMain/10 border-l-4 border-greenMain text-greenMain p-4 rounded-lg mb-8 shadow-md">
+            <p class="font-bold">Information</p>
+            <p>Si vous voyez ce texte avec des styles, Tailwind fonctionne correctement !</p>
+        </div>
+
+        <!-- Button Examples -->
+        <section class="bg-white rounded-4xl shadow-xl p-6">
+            <h3 class="text-2xl font-bold text-blackMain mb-4">Exemples de Boutons</h3>
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-redMain hover:bg-redMain/80 text-white font-bold py-2 px-4 rounded-lg cursor-pointer transition duration-300 transform hover:scale-110">
+                    Rouge
+                </button>
+                <button class="bg-greenMain hover:bg-greenMain/80 text-white font-bold py-2 px-4 rounded-lg cursor-pointer transition duration-300 transform hover:scale-110">
+                    Vert
+                </button>
+                <button class="bg-orangeMain hover:bg-orangeMain/80 text-white font-bold py-2 px-4 rounded-lg cursor-pointer transition duration-300 transform hover:scale-110">
+                    Orange
+                </button>
+                <button class="bg-blackMain hover:bg-blackMain/80 text-white font-bold py-2 px-4 rounded-full cursor-pointer transition duration-300 transform hover:scale-110">
+                    Arrondi
+                </button>
+                <button class="border-2 border-redMain text-redMain hover:bg-redMain hover:text-white font-bold py-2 px-4 rounded-lg transition duration-300 cursor-pointer">
+                    Contour
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blackMain text-white mt-12 shadow-3xl">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p>&copy; 2025 Mon Site. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
