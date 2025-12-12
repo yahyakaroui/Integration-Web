@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EspritMeal - Compose ton plat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+          },
+          colors: {
+            primary: '#CD1010',
+            secondary: '#FF7043',
+            success: '#288E3E',
+          },
+          borderRadius: {
+            'xl': '16px',
+            '2xl': '24px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(135deg, #CD1010, #FF7043);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, #CD1010 0%, #FF7043 100%);
+    }
+    .bg-gradient-success {
+      background: linear-gradient(135deg, #288E3E 0%, #4CAF50 100%);
+    }
+  </style>
+</head>
+<body class="font-sans bg-gradient-to-b from-gray-50 to-white text-gray-900 min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-4 gap-8 flex-wrap">
+        <div class="flex items-center gap-3">
+          <img src="../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+        </div>
+        
+        <div class="flex-1 max-w-lg order-3 lg:order-2 w-full lg:w-auto">
+          <div class="relative flex items-center">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+        </div>
+        
+        <nav class="hidden lg:flex items-center gap-2 order-2 lg:order-3">
+          <a href="../Accueil.html" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <i class="fas fa-home text-lg"></i>
+            <span>Accueil</span>
+          </a>
+          <a href="#restaurants" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <i class="fas fa-store text-lg"></i>
+            <span>Restaurants</span>
+          </a>
+          <a href="#promos" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <i class="fas fa-fire text-lg"></i>
+            <span>Promotion</span>
+          </a>
+          <a href="#composition" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+            <i class="fas fa-plus-circle text-lg"></i>
+            <span>Composition</span>
+          </a>
+        </nav>
+        
+        <div class="flex items-center gap-3 order-4">
+          <button class="relative flex items-center justify-center w-11 h-11 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-lg"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-[18px] h-[18px] rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </button>
+          <button class="flex items-center justify-center w-11 h-11 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid lg:grid-cols-3 gap-10">
+      
+      <!-- Steps Section -->
+      <section class="lg:col-span-2 bg-white p-8 rounded-3xl shadow-lg">
+        <h2 class="text-gray-900 text-3xl font-bold mb-6">Étape 1 : Choisir votre base</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <label class="base-option block p-5 text-center border-2 border-primary bg-primary/10 rounded-xl cursor-pointer transition-all hover:border-primary hover:-translate-y-0.5">
+            <input type="radio" name="base" value="pizza" checked class="hidden">
+            <i class="fas fa-pizza-slice text-4xl text-primary mb-2 block"></i>
+            <span class="block font-semibold mb-1">Pizza</span>
+          </label>
+          
+          <label class="base-option block p-5 text-center border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
+            <input type="radio" name="base" value="burger" class="hidden">
+            <i class="fas fa-hamburger text-4xl text-gray-600 mb-2 block"></i>
+            <span class="block font-semibold mb-1">Burger</span>
+          </label>
+          
+          <label class="base-option block p-5 text-center border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
+            <input type="radio" name="base" value="wrap" class="hidden">
+            <i class="fas fa-cookie-bite text-4xl text-gray-600 mb-2 block"></i>
+            <span class="block font-semibold mb-1">Wrap</span>
+          </label>
+        </div>
+
+        <h3 class="text-gray-900 text-xl font-semibold mb-4 mt-8">Ajouter des ingrédients</h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="ingredient-option flex items-center justify-between p-4 border-2 border-primary bg-primary/10 rounded-xl cursor-pointer transition-all hover:border-primary hover:-translate-y-0.5">
+            <input type="checkbox" checked class="hidden">
+            <span class="font-medium">🍅 Sauce tomate</span>
+          </label>
+          
+          <label class="ingredient-option flex items-center justify-between p-4 border-2 border-primary bg-primary/10 rounded-xl cursor-pointer transition-all hover:border-primary hover:-translate-y-0.5">
+            <input type="checkbox" checked class="hidden">
+            <span class="font-medium">🧀 Mozzarella</span>
+          </label>
+          
+          <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
+            <input type="checkbox" class="hidden">
+            <span class="font-medium">🍄 Champignons</span>
+          </label>
+          
+          <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
+            <input type="checkbox" class="hidden">
+            <span class="font-medium">🧅 Oignons</span>
+          </label>
+          
+          <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
+            <input type="checkbox" class="hidden">
+            <span class="font-medium">🥩 Viande hachée</span>
+          </label>
+          
+          <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
+            <input type="checkbox" class="hidden">
+            <span class="font-medium">🌿 Basilic</span>
+          </label>
+        </div>
+
+        <a href="Suggestion.html" class="block w-full bg-gradient-primary text-white px-8 py-4 text-lg font-bold rounded-xl mt-8 transition-all hover:-translate-y-0.5 hover:shadow-xl text-center">
+          Ajouter
+        </a>
+      </section>
+
+      <!-- Preview -->
+      <aside class="bg-white p-6 rounded-3xl shadow-lg h-fit sticky top-24">
+        <h3 class="text-xl font-semibold mb-5 text-gray-900">Votre création</h3>
+        
+        <div class="text-center p-5 bg-gray-50 rounded-xl mb-6">
+          <div class="text-7xl mb-3">🍕</div>
+          <h4 class="text-lg font-semibold mb-2">Pizza Margherita</h4>
+        </div>
+        
+        <div>
+          <h4 class="text-base font-semibold mb-3">Ingrédients sélectionnés</h4>
+          <div id="ingredient-list" class="flex flex-col gap-2">
+            <div class="py-2 px-3 bg-gray-50 rounded-lg text-sm">🍅 Sauce tomate</div>
+            <div class="py-2 px-3 bg-gray-50 rounded-lg text-sm">🧀 Mozzarella</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden mt-20">
+    <div class="absolute inset-0 opacity-5" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
+    
+    <div class="relative z-10 pt-20 pb-0">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 text-3xl font-extrabold mb-5">
+              <i class="fas fa-utensils text-primary"></i>
+              <span class="text-gradient">EspritMeal</span>
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8">
+              Révolutionnez votre façon de manger avec nos plats 100% personnalisables. 
+              Des ingrédients frais, une livraison rapide, une expérience unique.
+            </p>
+            <div>
+              <span class="block text-white font-semibold mb-4 text-lg">Rejoignez notre communauté</span>
+              <div class="flex gap-3 flex-wrap">
+                <a href="https://facebook.com/espritmeal" class="w-12 h-12 rounded-full bg-blue-600/20 hover:bg-blue-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/espritmeal" class="w-12 h-12 rounded-full bg-pink-600/20 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/espritmeal" class="w-12 h-12 rounded-full bg-blue-400/20 hover:bg-blue-400 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://tiktok.com/@espritmeal" class="w-12 h-12 rounded-full bg-white/10 hover:bg-black flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://youtube.com/espritmeal" class="w-12 h-12 rounded-full bg-red-600/20 hover:bg-red-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">Navigation</h4>
+            <ul class="space-y-3">
+              <li><a href="../Accueil.html" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Accueil</a></li>
+              <li><a href="../Accueil.html#restaurants" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Nos Restaurants</a></li>
+              <li><a href="../Accueil.html#promotions" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Promotions</a></li>
+              <li><a href="Composition.html" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Composer mon plat</a></li>
+              <li><a href="../Accueil.html#avis" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Avis clients</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="#livraison" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Livraison Express</a></li>
+              <li><a href="#carte-cadeau" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Carte Cadeau</a></li>
+              <li><a href="#programme-fidelite" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Programme Fidélité</a></li>
+              <li><a href="#partenaires" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Devenir Partenaire</a></li>
+              <li><a href="#aide" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Centre d'Aide</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">Contact & Infos</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-gray-400 text-sm">
+                <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                <span>123 Rue de la République<br>75001 Paris, France</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-phone text-primary"></i>
+                <span>+33 1 23 45 67 89</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-envelope text-primary"></i>
+                <span>contact@espritmeal.fr</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-clock text-primary"></i>
+                <span>Lun-Dim: 11h-23h</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 pb-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+              <p class="text-gray-400 text-sm mb-3">&copy; 2025 EspritMeal. Tous droits réservés.</p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-5 text-sm">
+                <a href="#mentions-legales" class="text-gray-400 hover:text-secondary transition-colors">Mentions légales</a>
+                <a href="#cgu" class="text-gray-400 hover:text-secondary transition-colors">CGU</a>
+                <a href="#confidentialite" class="text-gray-400 hover:text-secondary transition-colors">Politique de confidentialité</a>
+                <a href="#cookies" class="text-gray-400 hover:text-secondary transition-colors">Cookies</a>
+              </div>
+            </div>
+            <div class="flex gap-6 flex-wrap justify-center">
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-shield-alt text-primary"></i>
+                <span>Paiement sécurisé</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-truck text-primary"></i>
+                <span>Livraison rapide</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-leaf text-primary"></i>
+                <span>Ingrédients frais</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for interactivity -->
+  <script>
+    let basePrice = 8;
+    let totalPrice = 8;
+    const ingredientPrices = {
+      'champignons': 1,
+      'oignons': 0.5,
+      'viande': 3,
+      'basilic': 0.5
+    };
+
+    // Base selection handling
+    document.querySelectorAll('.base-option').forEach(option => {
+      option.addEventListener('click', function() {
+        // Remove selected from all base options
+        document.querySelectorAll('.base-option').forEach(opt => {
+          opt.classList.remove('border-primary', 'bg-primary/10');
+          opt.classList.add('border-gray-200', 'bg-white');
+          const icon = opt.querySelector('i');
+          icon.classList.remove('text-primary');
+          icon.classList.add('text-gray-600');
+        });
+        
+        // Add selected to clicked option
+        this.classList.remove('border-gray-200', 'bg-white');
+        this.classList.add('border-primary', 'bg-primary/10');
+        const icon = this.querySelector('i');
+        icon.classList.remove('text-gray-600');
+        icon.classList.add('text-primary');
+        
+        // Update base price and preview
+        const input = this.querySelector('input');
+        const value = input.value;
+        if (value === 'pizza') {
+          basePrice = 8;
+          updatePreviewVisual('🍕', 'Pizza Margherita');
+        }
+        else if (value === 'burger') {
+          basePrice = 9;
+          updatePreviewVisual('🍔', 'Burger Classique');
+        }
+        else if (value === 'wrap') {
+          basePrice = 7;
+          updatePreviewVisual('🌯', 'Wrap Gourmand');
+        }
+        
+        updateTotal();
+      });
+    });
+
+    // Ingredient selection handling
+    document.querySelectorAll('.ingredient-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const input = this.querySelector('input');
+        input.checked = !input.checked;
+        
+        // Toggle visual selection
+        if (input.checked) {
+          this.classList.remove('border-gray-200', 'bg-white');
+          this.classList.add('border-primary', 'bg-primary/10');
+        } else {
+          this.classList.remove('border-primary', 'bg-primary/10');
+          this.classList.add('border-gray-200', 'bg-white');
+        }
+        
+        updateIngredientList();
+        updateTotal();
+      });
+    });
+
+    function updateIngredientList() {
+      const list = document.getElementById('ingredient-list');
+      list.innerHTML = '';
+      
+      document.querySelectorAll('.ingredient-option input:checked').forEach(input => {
+        const label = input.closest('.ingredient-option');
+        const text = label.querySelector('span').textContent;
+        const div = document.createElement('div');
+        div.className = 'py-2 px-3 bg-gray-50 rounded-lg text-sm';
+        div.textContent = text;
+        list.appendChild(div);
+      });
+    }
+
+    function updatePreviewVisual(emoji, name) {
+      const emojiElement = document.querySelector('.text-7xl');
+      const nameElement = document.querySelector('.text-lg.font-semibold.mb-2');
+      
+      if (emojiElement) emojiElement.textContent = emoji;
+      if (nameElement) nameElement.textContent = name;
+    }
+
+    function updateTotal() {
+      totalPrice = basePrice;
+      
+      // Add ingredient prices (code retiré car les prix ont été supprimés)
+      // Mais on garde la fonction pour compatibilité
+    }
+  </script>
+
+</body>
+</html>
