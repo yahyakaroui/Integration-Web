@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EspritMeal - Choisir l'heure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#EA4335',
+                            orange: '#F97316',
+                            dark: '#1F2937',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        /* Styles spécifiques pour l'horloge analogique */
+        .clock-face {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #E0E0E0; /* Gris clair comme sur l'image */
+        }
+        .clock-number {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 500;
+            color: #333;
+        }
+        /* Positionnement approximatif des chiffres pour le rendu visuel */
+        .num-12 { top: 10px; left: 50%; transform: translateX(-50%); }
+        .num-1 { top: 25px; right: 55px; }
+        .num-2 { top: 65px; right: 25px; }
+        .num-3 { top: 50%; right: 10px; transform: translateY(-50%); }
+        .num-4 { bottom: 65px; right: 25px; }
+        .num-5 { bottom: 25px; right: 55px; }
+        .num-6 { bottom: 10px; left: 50%; transform: translateX(-50%); }
+        .num-7 { bottom: 25px; left: 55px; } /* Position du 7 */
+        .num-8 { bottom: 65px; left: 25px; }
+        .num-9 { top: 50%; left: 10px; transform: translateY(-50%); }
+        .num-10 { top: 65px; left: 25px; }
+        .num-11 { top: 25px; left: 55px; }
+
+        /* Le point central */
+        .center-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background-color: #DB3828;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        /* L'aiguille vers le 7 */
+        .hand-to-7 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 90px; /* Longueur du rayon vers le chiffre */
+            background-color: #DB3828;
+            transform-origin: top center;
+            transform: rotate(150deg); /* Angle pour pointer vers 7h */
+        }
+        
+        /* Cercle rouge sur le chiffre séléctionné */
+        .selected-circle {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #DB3828;
+            border-radius: 50%;
+            z-index: 5;
+            /* Ajustement pour le 7 */
+            bottom: 20px; 
+            left: 50px;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-700 flex flex-col min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-5 gap-8">
+        <div class="flex items-center gap-3">
+          <img src="../../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+        </div>
+        
+        <nav class="hidden lg:flex items-center gap-2">
+          <a href="#accueil" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+            <span>Accueil</span>
+          </a>
+          <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Restaurants</span>
+          </a>
+          <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-brand-red bg-red-50 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Promotions</span>
+          </a>
+          <a href="RepaSain/Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Composition</span>
+          </a>
+          <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Contact</span>
+          </a>
+        </nav>
+        
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </button>
+          <button class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center py-10 px-4 relative">
+
+        <h1 class="text-4xl md:text-5xl font-display text-[#8B1E1E] text-shadow tracking-wide mb-8">
+            Promotion >  Choisir l'heure de retrait
+        </h1>
+
+        <div class="relative w-full max-w-md bg-[#DBEFE0] border border-green-300 rounded-lg p-4 mb-4 shadow-sm flex flex-col gap-2">
+            <button class="absolute top-2 right-3 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="flex gap-3">
+                <div class="pt-1">
+                    <i class="fas fa-info-circle text-[#DB3828] text-lg"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-[#DB3828] text-sm md:text-base">Félicitations vous avez gagner -20%</p>
+                    <p class="text-xs md:text-sm text-gray-700 mt-1">Total à payer : 9,5 DT à payer</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-end gap-3 mt-2">
+                <button class="bg-[#DB3828] hover:bg-red-700 text-white text-xs font-bold py-1.5 px-4 rounded shadow transition">
+                    Profiter
+                </button>
+                <button class="bg-[#EA4335] hover:bg-red-600 text-white text-xs font-bold py-1.5 px-4 rounded shadow transition border border-red-700">
+                    Annuler
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-[#FFCCBC] rounded-3xl p-6 w-full max-w-xs md:max-w-sm shadow-xl flex flex-col items-center relative">
+            
+            <p class="text-left w-full text-xs font-semibold text-gray-700 mb-4 pl-2">Choisissez l'heure</p>
+
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="bg-[#2E7D32] text-white text-5xl font-normal px-4 py-2 rounded-lg shadow-inner">
+                    07
+                </div>
+                <span class="text-4xl font-bold text-gray-700">:</span>
+                <div class="bg-[#F5F5F5] text-gray-800 text-5xl font-normal px-4 py-2 rounded-lg shadow-sm border border-gray-300">
+                    00
+                </div>
+                <div class="flex flex-col border border-red-200 rounded-lg overflow-hidden ml-2">
+                    <button class="bg-[#FFCDD2] text-gray-700 text-xs px-2 py-1.5 hover:bg-red-200 border-b border-red-200">AM</button>
+                    <button class="bg-[#E1BEE7] text-gray-700 text-xs px-2 py-1.5 hover:bg-purple-200">PM</button>
+                </div>
+            </div>
+
+            <div class="clock-face shadow-inner mb-10">
+                <span class="clock-number num-12">12</span>
+                <span class="clock-number num-1">1</span>
+                <span class="clock-number num-2">2</span>
+                <span class="clock-number num-3">3</span>
+                <span class="clock-number num-4">4</span>
+                <span class="clock-number num-5">5</span>
+                <span class="clock-number num-6">6</span>
+                
+                <div class="selected-circle"></div>
+                <span class="clock-number num-7 text-white z-10 relative">7</span>
+                
+                <span class="clock-number num-8">8</span>
+                <span class="clock-number num-9">9</span>
+                <span class="clock-number num-10">10</span>
+                <span class="clock-number num-11">11</span>
+
+                <div class="center-dot"></div>
+                <div class="hand-to-7"></div>
+            </div>
+
+            <div class="w-full flex justify-between items-end mt-2">
+                <i class="fas fa-keyboard text-gray-600 text-xl cursor-pointer"></i>
+                <div class="flex gap-6 text-sm font-bold text-[#2E7D32]">
+                    <button class="hover:text-green-800 transition">Cancel</button>
+                    <button class="hover:text-green-800 transition">OK</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-[#1F1F1F] text-gray-400 mt-10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Rejoignez notre communauté</h4>
+                    <p class="text-sm leading-relaxed mb-6">Révolutionnez votre façon de manger avec nos plats 100% personnalisables.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="bg-[#1877F2] text-white h-9 w-9 rounded-full flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="bg-gradient-to-tr from-yellow-400 to-purple-600 text-white h-9 w-9 rounded-full flex items-center justify-center"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="bg-[#1DA1F2] text-white h-9 w-9 rounded-full flex items-center justify-center"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Nos Restaurants</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#">Livraison Express</a></li>
+                        <li><a href="#">Carte Cadeau</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Newsletter</h4>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email..." class="bg-[#2D2D2D] text-gray-200 px-4 py-2 rounded-l-md w-full text-sm border border-transparent">
+                        <button class="bg-[#EA4335] px-4 py-2 rounded-r-md"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>© 2025 EspritMeal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
