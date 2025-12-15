@@ -47,44 +47,40 @@
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between py-4 gap-8 flex-wrap">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center justify-between py-4 gap-4">
+        <div class="flex items-center gap-3 flex-shrink-0">
           <img src="../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
         </div>
         
-        <div class="flex-1 max-w-lg order-3 lg:order-2 w-full lg:w-auto">
-          <div class="relative flex items-center">
-            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
-            <input type="text" placeholder="Rechercher un plat..." class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
-          </div>
-        </div>
-        
-        <nav class="hidden lg:flex items-center gap-2 order-2 lg:order-3">
-          <a href="../Accueil.html" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
-            <i class="fas fa-home text-lg"></i>
+        <nav class="hidden xl:flex items-center gap-2">
+          <a href="../Accueil.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
             <span>Accueil</span>
           </a>
-          <a href="#restaurants" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
-            <i class="fas fa-store text-lg"></i>
+          <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
             <span>Restaurants</span>
           </a>
-          <a href="#promos" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
-            <i class="fas fa-fire text-lg"></i>
-            <span>Promotion</span>
+          <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Promotions</span>
           </a>
-          <a href="#composition" class="flex flex-col items-center gap-1 px-5 py-2 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
-            <i class="fas fa-plus-circle text-lg"></i>
+          <a href="Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
             <span>Composition</span>
+          </a>
+          <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Contact</span>
           </a>
         </nav>
         
-        <div class="flex items-center gap-3 order-4">
-          <button class="relative flex items-center justify-center w-11 h-11 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
-            <i class="fas fa-shopping-cart text-lg"></i>
-            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-[18px] h-[18px] rounded-full flex items-center justify-center border-2 border-white">2</span>
+        <div class="flex items-center gap-4 flex-shrink-0">
+          <div class="hidden lg:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-64 xl:w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
           </button>
-          <button class="flex items-center justify-center w-11 h-11 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
-            <i class="fas fa-user-circle text-lg"></i>
+          <button class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
           </button>
         </div>
       </div>
@@ -121,41 +117,39 @@
 
         <h3 class="text-gray-900 text-xl font-semibold mb-4 mt-8">Ajouter des ingrédients</h3>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-3 gap-3">
           <label class="ingredient-option flex items-center justify-between p-4 border-2 border-primary bg-primary/10 rounded-xl cursor-pointer transition-all hover:border-primary hover:-translate-y-0.5">
             <input type="checkbox" checked class="hidden">
-            <span class="font-medium">🍅 Sauce tomate</span>
+            <span class="font-medium">Sauce tomate 🍅</span>
           </label>
           
           <label class="ingredient-option flex items-center justify-between p-4 border-2 border-primary bg-primary/10 rounded-xl cursor-pointer transition-all hover:border-primary hover:-translate-y-0.5">
             <input type="checkbox" checked class="hidden">
-            <span class="font-medium">🧀 Mozzarella</span>
+            <span class="font-medium">Mozzarella 🧀</span>
           </label>
           
           <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
             <input type="checkbox" class="hidden">
-            <span class="font-medium">🍄 Champignons</span>
+            <span class="font-medium">Champignons 🍄</span>
           </label>
           
           <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
             <input type="checkbox" class="hidden">
-            <span class="font-medium">🧅 Oignons</span>
+            <span class="font-medium">Oignons 🧅</span>
           </label>
           
           <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
             <input type="checkbox" class="hidden">
-            <span class="font-medium">🥩 Viande hachée</span>
+            <span class="font-medium">Viande hachée 🥩</span>
           </label>
           
           <label class="ingredient-option flex items-center justify-between p-4 border-2 border-gray-200 bg-white rounded-xl cursor-pointer transition-all hover:border-secondary hover:-translate-y-0.5">
             <input type="checkbox" class="hidden">
-            <span class="font-medium">🌿 Basilic</span>
+            <span class="font-medium">Basilic 🌿</span>
           </label>
         </div>
 
-        <a href="Suggestion.html" class="block w-full bg-gradient-primary text-white px-8 py-4 text-lg font-bold rounded-xl mt-8 transition-all hover:-translate-y-0.5 hover:shadow-xl text-center">
-          Ajouter
-        </a>
+
       </section>
 
       <!-- Preview -->
@@ -170,11 +164,18 @@
         <div>
           <h4 class="text-base font-semibold mb-3">Ingrédients sélectionnés</h4>
           <div id="ingredient-list" class="flex flex-col gap-2">
-            <div class="py-2 px-3 bg-gray-50 rounded-lg text-sm">🍅 Sauce tomate</div>
-            <div class="py-2 px-3 bg-gray-50 rounded-lg text-sm">🧀 Mozzarella</div>
+            <div class="py-2 px-3 bg-gray-50 rounded-lg text-sm">Sauce tomate 🍅</div>
+            <div class="py-2 px-3 bg-gray-50 rounded-lg text-sm">Mozzarella 🧀</div>
           </div>
         </div>
       </aside>
+    </div>
+
+    <!-- Bouton Navigation -->
+    <div class="flex justify-center mt-10">
+      <a href="Suggestion.html" class="px-12 py-4 bg-gradient-primary text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+        Suggestions
+      </a>
     </div>
   </main>
 
