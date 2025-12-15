@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EspritMeal - Nouvelle Composition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+          },
+          colors: {
+            primary: '#CD1010',
+            secondary: '#FF7043',
+            success: '#288E3E',
+          },
+          borderRadius: {
+            'xl': '16px',
+            '2xl': '24px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(135deg, #CD1010, #FF7043);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, #CD1010 0%, #FF7043 100%);
+    }
+    .bg-gradient-success {
+      background: linear-gradient(135deg, #288E3E 0%, #4CAF50 100%);
+    }
+  </style>
+</head>
+<body class="font-sans bg-gradient-to-b from-gray-50 to-white text-gray-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-4 gap-4">
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+        </div>
+        
+        <nav class="hidden xl:flex items-center gap-2">
+          <a href="../Accueil.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Accueil</span>
+          </a>
+          <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Restaurants</span>
+          </a>
+          <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Promotions</span>
+          </a>
+          <a href="Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+            <span>Composition</span>
+          </a>
+          <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Contact</span>
+          </a>
+        </nav>
+        
+        <div class="flex items-center gap-4 flex-shrink-0">
+          <div class="hidden lg:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-64 xl:w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </button>
+          <button class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <!-- Title -->
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-12">Nouvelle composition</h1>
+
+    <!-- Main Content Grid -->
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      
+      <!-- Left Side - Pizza Image with Nutri-Score (sans cadre) -->
+      <div class="flex flex-col items-center">
+        <!-- Nutri-Score Letters - Style identique à nutri-score.html -->
+        <div class="flex items-center gap-2 mb-10">
+          <div class="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center text-white text-xl font-bold shadow-md">
+            A
+          </div>
+          <div class="w-14 h-14 rounded-xl bg-lime-400 flex items-center justify-center text-white text-2xl font-bold shadow-lg ring-4 ring-lime-200">
+            B
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center text-white text-xl font-bold shadow-md">
+            C
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center text-white text-xl font-bold shadow-md">
+            D
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-red-500 flex items-center justify-center text-white text-xl font-bold shadow-md">
+            E
+          </div>
+        </div>
+        
+        <!-- Pizza Image -->
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=400&fit=crop" alt="Pizza Pepperoni" class="w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl border-8 border-white" />
+        </div>
+      </div>
+
+      <!-- Right Side - Améliorations (dans un cadre) -->
+      <div class="bg-white rounded-3xl shadow-xl p-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Améliorations Apportées</h2>
+        
+        <!-- Improvements Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          
+          <!-- Pâte Complète -->
+          <div class="bg-gray-100 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 text-center mb-4">Pâte Complète</h3>
+            <div class="flex justify-center gap-6 mb-4">
+              <span class="text-sm text-gray-400 line-through">Pâte blanche</span>
+              <span class="text-sm text-green-700 font-bold">Pâte aux céréales</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-1.5">
+              <span class="px-2.5 py-1 border border-green-600 text-green-700 text-xs font-medium rounded-full">+Fibres</span>
+              <span class="px-2.5 py-1 border border-green-600 text-green-700 text-xs font-medium rounded-full">+Vitamines B</span>
+              <span class="px-2.5 py-1 border border-green-600 text-green-700 text-xs font-medium rounded-full">-Index glycémique</span>
+            </div>
+          </div>
+
+          <!-- Mozzarella Allégée -->
+          <div class="bg-gray-100 rounded-3xl p-6">
+            <h3 class="text-lg font-bold text-gray-900 text-center mb-4">Mozzarella Allégée</h3>
+            <div class="flex justify-center gap-6 mb-4">
+              <span class="text-sm text-gray-400 line-through">Mozzarella classique</span>
+              <span class="text-sm text-green-700 font-bold">Version light</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-1.5">
+              <span class="px-2.5 py-1 border border-green-600 text-green-700 text-xs font-medium rounded-full">-30% Calories</span>
+              <span class="px-2.5 py-1 border border-green-600 text-green-700 text-xs font-medium rounded-full">-Graisses saturées</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="text-gray-600 text-sm leading-relaxed">
+          <p>
+            Votre pizza améliorée par l'IA, classée avec un <span class="text-green-600 font-semibold">Nutri-Score B</span>, propose une alternative plus saine et savoureuse grâce à une <span class="text-green-600 font-semibold">pâte complète</span>, riche en fibres et en nutriments essentiels, qui apporte une texture rustique et soutient une meilleure digestion. Elle intègre une <span class="text-green-600 font-semibold">mozzarella version light</span>, pour une saveur authentique et une bonne source d'antioxydants comme le lycopène, bénéfique pour la santé cardiovasculaire.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Button - Centré en bas de la page -->
+    <div class="flex justify-center mt-12">
+        <a href="../Accueil.html">
+            <button class="px-12 py-4 bg-gradient-success text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                Sauvegarder la recette
+            </button>
+        </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden mt-8">
+    <div class="absolute inset-0 opacity-5" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
+    
+    <div class="relative z-10 pt-20 pb-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div class="lg:col-span-1">
+            <div class="flex items-center gap-3 text-2xl font-extrabold mb-5">
+              <i class="fas fa-utensils text-primary"></i>
+              <span class="text-gradient">EspritMeal</span>
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Révolutionnez votre façon de manger avec nos plats 100% personnalisables.
+            </p>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 rounded-full bg-blue-600/20 hover:bg-blue-600 flex items-center justify-center text-white transition-all hover:-translate-y-1">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-pink-600/20 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white transition-all hover:-translate-y-1">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-blue-400/20 hover:bg-blue-400 flex items-center justify-center text-white transition-all hover:-translate-y-1">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-bold mb-5">Navigation</h4>
+            <ul class="space-y-3">
+              <li><a href="../Accueil.html" class="text-gray-400 hover:text-secondary transition-all">Accueil</a></li>
+              <li><a href="../Accueil.html#restaurants" class="text-gray-400 hover:text-secondary transition-all">Restaurants</a></li>
+              <li><a href="../Accueil.html#promos" class="text-gray-400 hover:text-secondary transition-all">Promotions</a></li>
+              <li><a href="Composition.html" class="text-gray-400 hover:text-secondary transition-all">Composition</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-bold mb-5">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-gray-400 hover:text-secondary transition-all">Livraison Express</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-secondary transition-all">Programme Fidélité</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-secondary transition-all">Carte Cadeau</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white text-lg font-bold mb-5">Contact</h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-map-marker-alt text-primary"></i>
+                <span>123 Rue de la République, Paris</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-phone text-primary"></i>
+                <span>+33 1 23 45 67 89</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-envelope text-primary"></i>
+                <span>contact@espritmeal.fr</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+          <p>© 2025 EspritMeal. Tous droits réservés.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
