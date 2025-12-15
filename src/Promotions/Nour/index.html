@@ -1,25 +1,353 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../../../dist/output.css" rel="stylesheet">
-  <title>Twinova</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EspritMeal - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#EA4335',
+                            orange: '#F97316',
+                            dark: '#1F2937',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        /* Animation légère pour la mascotte */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .mascot-animate {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body>
-<div class="font font-Poppins  bg-[#212529]  min-h-screen">
-      <div class="flex flex-col items-center relative pt-20">
-        <!-- Background Text  -->
-        <h1 class="absolute text-6xl md:text-9xl font-semibold text-white opacity-5  ">
-          ABOUT ME
-        </h1>
-        <div class="relative flex flex-col items-center mt-5 md:mt-10">
-          <!-- Foreground Text  -->
-          <h1 class="text-2xl md:text-4xl lg:text-6xl font-semibold text-gray-100">Know Me More</h1>
-          <!-- Custom Border  -->
-          <div class="md:w-28 w-14 md:h-[4px] h-[2px] bg-orange-600 mt-2"></div>
+<body class="bg-white font-sans text-gray-700">
+<!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-between py-5 gap-8">
+      <div class="flex items-center gap-3">
+        <img src="../../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+      </div>
+      
+      <nav class="hidden lg:flex items-center gap-2">
+        <a href="#accueil" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <span>Accueil</span>
+        </a>
+
+        <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <span>Restaurants</span>
+        </a>
+
+        <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-primary text-brand-red bg-red-50 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+          <span>Promotions</span>
+        </a>
+
+        <a href="RepaSain/Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <span>Composition</span>
+        </a>
+
+        <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <span>Contact</span>
+        </a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center relative">
+          <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+          <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
         </div>
+        <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+          <i class="fas fa-shopping-cart text-xl"></i>
+          <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+        </button>
+        <button class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+          <i class="fas fa-user-circle text-xl"></i>
+        </button>
       </div>
     </div>
+  </div>
+</header>
+   
+
+
+    <main class="max-w-7xl mx-auto px-4 py-6 relative">
+        
+        <div class="flex justify-end mb-2">
+            <span class="text-red-600 text-sm font-bold">Vous avez 8dt dans cha9a9ti</span>
+        </div>
+
+        <div class="text-center mb-8 relative">
+            <h1 class="text-5xl font-display text-[#8B1E1E] text-shadow tracking-wide">Promotion > Choisir Votre Repas</h1>
+            
+            <div class="hidden lg:block absolute right-0 -top-4 z-20 w-40 mascot-animate">
+                <div class="relative flex justify-center items-center">
+                    <img src="../../../public/Gemini_Generated_Image_sa64tlsa64tlsa64-removebg-preview.png" alt="Cha9a9ti " class="w-full drop-shadow-xl">
+                    
+                    <div class="absolute top-[50%] left-[50%] bg-[#EA4335] text-white font-bold rounded-full h-8 w-8 flex items-center justify-center border-1 border-white shadow-lg text-sm">
+                        8 DT
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-10 px-4">
+            <div class="relative w-full md:w-1/3 max-w-sm">
+                <input type="text" placeholder="Rechercher" class="w-full border-2 border-orange-200 rounded-full py-2.5 px-6 text-gray-600 focus:outline-none focus:border-orange-500 shadow-sm">
+                <i class="fas fa-search absolute right-5 top-3.5 text-orange-500 text-lg"></i>
+            </div>
+            
+            <div class="w-full md:w-1/3 max-w-sm">
+                <button class="w-full bg-[#F97316] hover:bg-orange-600 text-white font-medium py-2.5 px-6 rounded-md flex justify-between items-center shadow-md transition">
+                    <span>Choisir le type de promo qui vous intéresse</span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <aside class="w-full md:w-1/4 bg-[#FFEFEF] rounded-3xl p-6 h-fit border border-red-50">
+                <h2 class="text-[#EA4335] font-semibold mb-6 text-lg pl-2">Catégories</h2>
+                <div class="space-y-4">
+                    <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center cursor-pointer hover:shadow-md transition group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-pizza-slice text-orange-500 w-5"></i> 
+                            <span class="group-hover:text-orange-600 font-medium text-gray-700">Pizzas</span>
+                        </div>
+                        <div class="w-5 h-5 border-2 border-gray-300 rounded bg-white"></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center cursor-pointer hover:shadow-md transition border-l-4 border-orange-500">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-hamburger text-orange-500 w-5"></i>
+                            <span class="font-bold text-gray-800">Burger</span>
+                        </div>
+                        <div class="w-5 h-5 border-2 border-gray-300 rounded bg-gray-200"></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center cursor-pointer hover:shadow-md transition group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-leaf text-green-500 w-5"></i>
+                            <span class="group-hover:text-green-600 font-medium text-gray-700">Salades</span>
+                        </div>
+                        <div class="w-5 h-5 border-2 border-gray-300 rounded bg-white"></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center cursor-pointer hover:shadow-md transition group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-utensils text-gray-500 w-5"></i>
+                            <span class="group-hover:text-gray-600 font-medium text-gray-700">Plat Tunisien</span>
+                        </div>
+                        <div class="w-5 h-5 border-2 border-gray-300 rounded bg-white"></div>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center cursor-pointer hover:shadow-md transition group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-drumstick-bite text-yellow-700 w-5"></i>
+                            <span class="group-hover:text-yellow-800 font-medium text-gray-700">Poulet</span>
+                        </div>
+                        <div class="w-5 h-5 border-2 border-gray-300 rounded bg-white"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="w-full md:w-3/4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col relative pb-4">
+                        <div class="absolute top-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1 z-10">
+                            <i class="fas fa-star text-yellow-400 text-[10px]"></i> 4.8
+                        </div>
+                        <div class="h-40 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pizza" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col flex-1">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-gray-800 text-lg">Cheese Burger</h3>
+                                <span class="font-bold text-gray-700 text-sm">15DT</span>
+                            </div>
+                            <div class="text-xs text-gray-400 mb-4 space-y-1">
+                                <p>Composants: ...</p>
+                                <p>Spécialités: Burger, Pâtes</p>
+                            </div>
+                            <div class="mt-auto flex justify-center">
+                                <button onclick="showPayment()" class="bg-[#DB3828] text-white px-8 py-2 rounded-full font-bold shadow-md hover:bg-red-700 transition transform hover:-translate-y-0.5">
+                                    Commander
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col relative border-2 border-red-50 transform scale-105 z-10 pb-4">
+                        <div class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1 z-10">
+                            <i class="fas fa-fire"></i> Populaire
+                        </div>
+                        <div class="h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Burger" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col flex-1">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-gray-800 text-lg">Burger House</h3>
+                                <span class="font-bold text-gray-400 line-through text-xs ml-auto mr-2">19DT</span>
+                                <span class="font-bold text-red-600 text-lg">16DT</span>
+                            </div>
+                            <div class="text-xs text-gray-400 mb-4 space-y-1">
+                                <p>Composants: ...</p>
+                                <p>Spécialités: Burger, Frites</p>
+                            </div>
+                            <div class="mt-auto flex justify-center">
+                                <button onclick="showPayment()" class="bg-[#DB3828] text-white px-8 py-2 rounded-full font-bold shadow-md hover:bg-red-700 transition transform hover:-translate-y-0.5">
+                                    Commander
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col relative pb-4">
+                        <div class="absolute top-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1 z-10">
+                            <i class="fas fa-star text-yellow-400 text-[10px]"></i> 7.8
+                        </div>
+                        <div class="h-40 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Panuzzo" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col flex-1">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-gray-800 text-lg">Meal Burger</h3>
+                                <span class="font-bold text-gray-700 text-sm">15DT</span>
+                            </div>
+                            <div class="text-xs text-gray-400 mb-4 space-y-1">
+                                <p>Composants: ...</p>
+                                <p>Spécialités: Burger, Pâtes</p>
+                            </div>
+                            <div class="mt-auto flex justify-center">
+                                <button onclick="showPayment()" class="bg-[#DB3828] text-white px-8 py-2 rounded-full font-bold shadow-md hover:bg-red-700 transition transform hover:-translate-y-0.5">
+                                    Commander
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="paymentSection" class="hidden mt-16 max-w-lg mx-auto animate-fade-in-up">
+    <h3 class="font-bold text-gray-700 mb-6 text-center">Veuillez Choisir le mode de payement</h3>
+    
+    <div class="space-y-4">
+        <a href="heureRetrait.html" class="block w-full text-center bg-[#333333] text-white font-medium py-3 rounded-lg shadow hover:bg-black transition">
+            Utiliser mon argent de poche
+        </a>
+        
+        <div class="relative w-full">
+            <input type="text" placeholder="Code Promo ici ......" class="w-full border-2 border-gray-600 rounded-lg py-3 px-4 text-center font-medium placeholder-gray-500 focus:outline-none focus:border-black">
+            <a href="heureRetrait.html"><i class="fas fa-paper-plane absolute right-4 top-4 text-black cursor-pointer hover:scale-110 transition"></i></a>
+        </div>
+
+        <a href="chakakti.html" class="block w-full text-center bg-[#333333] text-white font-medium py-3 rounded-lg shadow hover:bg-black transition">
+            Utiliser Cha9a9ti
+        </a>
+    </div>
+</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#1F1F1F] text-gray-400 mt-20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Rejoignez notre communauté</h4>
+                    <p class="text-sm leading-relaxed mb-6">Révolutionnez votre façon de manger avec nos plats 100% personnalisables. Des ingrédients frais, une livraison rapide, une expérience unique.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="bg-[#1877F2] text-white h-9 w-9 rounded-full flex items-center justify-center hover:opacity-80 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="bg-gradient-to-tr from-yellow-400 to-purple-600 text-white h-9 w-9 rounded-full flex items-center justify-center hover:opacity-80 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="bg-[#1DA1F2] text-white h-9 w-9 rounded-full flex items-center justify-center hover:opacity-80 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="bg-white text-black h-9 w-9 rounded-full flex items-center justify-center hover:opacity-80 transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="bg-[#FF0000] text-white h-9 w-9 rounded-full flex items-center justify-center hover:opacity-80 transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="#" class="hover:text-white transition">Nos Restaurants</a></li>
+                        <li><a href="#" class="hover:text-white transition">Promotions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Composer mon plat</a></li>
+                        <li><a href="#" class="hover:text-white transition">Avis clients</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Livraison Express</a></li>
+                        <li><a href="#" class="hover:text-white transition">Carte Cadeau</a></li>
+                        <li><a href="#" class="hover:text-white transition">Programme Fidélité</a></li>
+                        <li><a href="#" class="hover:text-white transition">Devenir Partenaire</a></li>
+                        <li><a href="#" class="hover:text-white transition">Centre d'Aide</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact & Infos</h4>
+                    <div class="text-sm space-y-2 mb-6">
+                        <p>1, 2 rue André Ampère - 2083 - Pôle Technologique - El Ghazala.</p>
+                        <p>+216 20308557</p>
+                        <p>twinova@espritmeal.com</p>
+                        <p>Lun-Dim: 11h-23h</p>
+                    </div>
+
+                    <h4 class="text-white font-bold mb-2">Newsletter</h4>
+                    <p class="text-xs mb-2">Recevez nos meilleures offres !</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email..." class="bg-[#2D2D2D] text-gray-200 px-4 py-2 rounded-l-md w-full focus:outline-none text-sm border border-transparent focus:border-gray-600">
+                        <button class="bg-[#EA4335] px-4 py-2 rounded-r-md hover:bg-red-700 transition"></button>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-2">-10% sur votre première commande. Alertes promos exclusives.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>© 2025 EspritMeal. Tous droits réservés.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <span>Paiement sécurisé</span>
+                    <span>Livraison rapide</span>
+                    <span>Ingrédients frais</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!--script pour afficher le bloc choisir le mode de payement si on clique sur commander-->
+    <script>
+        function showPayment() {
+            // 1. Sélectionner la section paiement
+            const section = document.getElementById('paymentSection');
+            
+            // 2. Enlever la classe 'hidden' pour l'afficher
+            section.classList.remove('hidden');
+            
+            // 3. Faire défiler la page jusqu'à la section pour que l'utilisateur la voie
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
 </body>
 </html>
