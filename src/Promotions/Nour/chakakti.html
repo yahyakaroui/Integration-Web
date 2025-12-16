@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EspritMeal - Ma Cha9a9ti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#EA4335',     // Rouge vif principal
+                            darkRed: '#8B1E1E', // Rouge foncé pour les titres
+                            orange: '#F97316',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-shadow-title {
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+        }
+        /* Animation flottante pour la mascotte */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .mascot-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-700 flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-5 gap-8">
+        <div class="flex items-center gap-3">
+          <img src="../../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+        </div>
+        
+        <nav class="hidden lg:flex items-center gap-2">
+          <a href="#accueil" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+            <span>Accueil</span>
+          </a>
+          <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Restaurants</span>
+          </a>
+          <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-brand-red bg-red-50 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Promotions</span>
+          </a>
+          <a href="RepaSain/Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Composition</span>
+          </a>
+          <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Contact</span>
+          </a>
+        </nav>
+        
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </button>
+          <button class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center py-12 px-4 w-full max-w-7xl mx-auto">
+        
+        <h1 class="text-5xl md:text-6xl font-display text-brand-darkRed text-shadow-title text-center mb-16 tracking-wide drop-shadow-sm">
+           Promotion > Cha9a9ti
+        </h1>
+
+        <div class="relative w-full max-w-md mx-auto flex justify-center mb-16">
+            
+            <div class="relative w-64 h-64 md:w-80 md:h-80 mascot-float">
+                <img src="../../../public/Gemini_Generated_Image_sa64tlsa64tlsa64-removebg-preview.png" 
+                     alt="Mascotte Cha9a9ti" 
+                     class="w-full h-full object-contain drop-shadow-2xl filter brightness-90 contrast-110">
+                
+                <div class="absolute top-[60%] left-1/2 transform -translate-x-1/3 -translate-y-1/2 bg-gradient-to-br from-brand-orange to-brand-red text-white font-bold text-xl px-6 py-2 rounded-full shadow-lg border-2 border-white/20">
+                    8 DT
+                </div>
+            </div>
+
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl -z-10"></div>
+        </div>
+
+        <a href="index.html" class="group relative bg-[#EA4335] hover:bg-[#D93025] text-white text-lg font-semibold py-4 px-16 rounded-2xl shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-xl w-full max-w-xs">
+            <span>Utiliser ce montant</span>
+            <div class="absolute inset-0 rounded-2xl ring-2 ring-white/20 group-hover:ring-white/40"></div>
+        </a>
+
+    </main>
+
+    <footer class="bg-[#1F1F1F] text-gray-400 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Rejoignez notre communauté</h4>
+                    <p class="text-xs leading-relaxed mb-4">Révolutionnez votre façon de manger avec nos plats 100% personnalisables.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="bg-[#1877F2] text-white h-8 w-8 rounded-full flex items-center justify-center text-sm hover:scale-110 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="bg-gradient-to-tr from-yellow-400 to-purple-600 text-white h-8 w-8 rounded-full flex items-center justify-center text-sm hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="bg-[#1DA1F2] text-white h-8 w-8 rounded-full flex items-center justify-center text-sm hover:scale-110 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="bg-white text-black h-8 w-8 rounded-full flex items-center justify-center text-sm hover:scale-110 transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="bg-[#FF0000] text-white h-8 w-8 rounded-full flex items-center justify-center text-sm hover:scale-110 transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="#" class="hover:text-white transition">Nos Restaurants</a></li>
+                        <li><a href="#" class="hover:text-white transition">Promotions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Composer mon plat</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition">Livraison Express</a></li>
+                        <li><a href="#" class="hover:text-white transition">Carte Cadeau</a></li>
+                        <li><a href="#" class="hover:text-white transition">Programme Fidélité</a></li>
+                        <li><a href="#" class="hover:text-white transition">Devenir Partenaire</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-xs mb-3">Recevez nos meilleures offres !</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email..." class="bg-[#333] text-gray-200 px-4 py-2 rounded-l-lg w-full text-xs border border-transparent focus:outline-none focus:ring-1 focus:ring-brand-red">
+                        <button class="bg-[#EA4335] hover:bg-[#D93025] px-4 py-2 rounded-r-lg transition-colors text-white"></button>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-2">-10% sur votre première commande.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500">
+                <p>© 2025 EspritMeal. Tous droits réservés.</p>
+                <div class="flex gap-4 mt-2 md:mt-0">
+                    <span>Paiement sécurisé</span>
+                    <span>Livraison rapide</span>
+                    <span>Ingrédients frais</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
