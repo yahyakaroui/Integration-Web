@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EsprMeal - Vos Commandes</title>
+    <title>EsprMeal - Commande Prête</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
@@ -16,12 +16,6 @@
         .bg-red-800\/10 { background-color: rgba(153, 27, 27, 0.1); }
         .font-serif-custom {
             font-family: 'Georgia', serif; 
-        }
-        /* Style pour les cartes de commande (cadre rouge autour du conteneur gris) */
-        .order-card {
-            border: 2px solid #ef4444; /* red-500 pour la bordure extérieure */
-            border-radius: 0.5rem; /* rounded-lg */
-            background-color: #f3f4f6; /* gray-100 */
         }
     </style>
 </head>
@@ -69,118 +63,103 @@
         </div>
     </header>
 
-    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto">
-            
-            <h1 class="text-3xl font-serif-custom text-red-600 text-center mb-10">Vos commandes</h1>
+   <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
 
-            <div class="order-card p-4 shadow-xl mb-6 flex">
-                
-                <div class="w-24 h-24 mr-6 flex-shrink-0">
-                    <img src="pepperoni.png" alt="Pizza" class="w-full h-full object-cover rounded-lg border border-red-200 p-1" />
-                </div>
-                
-                <div class="flex-grow flex flex-col justify-between">
-                    
-                    <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-xl font-bold text-gray-800">PIZZA</h2>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-lg font-bold text-red-600">20 DT</span>
-                            <i class="fas fa-cog text-gray-400 text-sm"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-between items-center text-sm text-gray-600 mb-3">
-                        <p>
-                            <span class="font-semibold">- Thon</span>
-                            <span class="font-semibold ml-4">- Marqerite</span>
-                        </p>
-                        <p class="text-right">
-                            <span class="font-semibold">- 4 Fromage</span>
-                            <span class="font-semibold ml-4">- Olive</span>
-                            <span class="font-semibold ml-4">- Ananas</span>
-                        </p>
-                    </div>
+        <h1 class="text-3xl font-serif-custom text-red-600 text-center mb-10">
+            Commande
+        </h1>
 
-                    <div class="flex justify-end items-center mt-auto">
-                        <button class="bg-red-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-700 transition duration-150 shadow-md text-sm">
-                            Consulter
-                        </button>
+        <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
+
+            <!-- CONTENU CENTRALISÉ -->
+            <div class="flex flex-col items-center space-y-8">
+
+                <!-- TITRE -->
+                <h2 class="text-xl font-bold text-gray-800">
+                    Votre choix :
+                </h2>
+
+                <!-- IMAGE -->
+                <div class="border border-red-300 p-1 rounded-lg w-full max-w-xl">
+                    <img
+                        src="french-tacos-750x400.png"
+                        alt="Plat choisi"
+                        class="w-full h-auto rounded-md object-cover"
+                    >
+                </div>
+
+               
+
+                <!-- DESCRIPTION -->
+                <div class="w-full max-w-xl text-center">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">
+                        Description
+                    </h3>
+
+                    <div class="border border-red-300 p-4 rounded-lg bg-red-50 min-h-[150px]">
+                        <p class="text-sm text-gray-700">
+                            Votre tacos contient de la viande hachée, des frites croustillantes
+                            et une sauce fromagère fondante, le tout enveloppé dans une galette
+                            de blé dorée pour un goût savoureux et gourmand.
+                        </p>
                     </div>
                 </div>
+
             </div>
-
-            <div class="order-card p-4 shadow-xl mb-6 flex">
-                
-                <div class="w-24 h-24 mr-6 flex-shrink-0">
-                    <img src="takos.png" alt="Tacos" class="w-full h-full object-cover rounded-lg border border-red-200 p-1" />
+             <!-- CHECK ICON -->
+                <div class="flex justify-center items-center">
+                    <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
                 </div>
-                
-                <div class="flex-grow flex flex-col justify-between">
-                    
-                    <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-xl font-bold text-gray-800">TACOS</h2>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-lg font-bold text-red-600">18 DT</span>
-                            <i class="fas fa-cog text-gray-400 text-sm"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-between items-center text-sm text-gray-600 mb-3">
-                        <p>
-                            <span class="font-semibold">- XXL</span>
-                            <span class="font-semibold ml-4">- 3 viandes</span>
-                        </p>
-                        <p class="text-right">
-                            <span class="font-semibold">- 4 Fromage</span>
-                            <span class="font-semibold ml-4">- sauce fromage</span>
-                        </p>
-                    </div>
-
-                    <div class="flex justify-between items-center mt-auto">
-                        <span class="text-sm font-semibold text-orange-600 italic">- En Cours de preparation -</span>
-                        <button class="bg-red-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-700 transition duration-150 shadow-md text-sm">
-                            Consulter
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="order-card p-4 shadow-xl mb-6 flex">
-                
-                <div class="w-24 h-24 mr-6 flex-shrink-0">
-                    <img src="frite.png" alt="Frites" class="w-full h-full object-cover rounded-lg border border-red-200 p-1" />
-                </div>
-                
-                <div class="flex-grow flex flex-col justify-between">
-                    
-                    <div class="flex justify-between items-center mb-2">
-                        <h2 class="text-xl font-bold text-gray-800">FRITES</h2>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-lg font-bold text-red-600">5 DT</span>
-                            <i class="fas fa-cog text-gray-400 text-sm"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-between items-center text-sm text-gray-600 mb-3">
-                        <p>
-                            <span class="font-semibold">- Avec sauce</span>
-                        </p>
-                        <p class="text-right">
-                            <span class="font-semibold">- French</span>
-                        </p>
-                    </div>
-
-                    <div class="flex justify-end items-center mt-auto">
-                        <button class="bg-red-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-red-700 transition duration-150 shadow-md text-sm">
-                            Consulter
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
         </div>
-    </main>
+        
+
+        <!-- NOTIFICATION -->
+        <div class="fixed bottom-8 right-8 z-50">
+            <div class="bg-white p-4 rounded-lg shadow-2xl flex items-start border border-gray-200">
+                <div class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-gray-800 mt-1" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+
+                    <div>
+                        <p class="text-sm font-semibold text-gray-800">EsprMeal</p>
+                        <p class="text-xs text-gray-600">Vous avez pris votre commande</p>
+
+                        <p class="text-lg font-bold text-red-600 mt-1 flex items-center justify-center">
+                            "Bonne Appétit"
+                            <svg class="w-5 h-5 ml-2 text-gray-700" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2
+                                         1.343-2 3-2zM4 14s1-1 4-1 5 2 8 2 4-1 4-1"/>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+
+                <button class="ml-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</main>
 
     <footer class="bg-gray-800 text-white pt-10 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
