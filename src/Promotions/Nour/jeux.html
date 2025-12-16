@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EspritMeal - Jeu de récompenses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#EA4335',
+                            darkRed: '#8B1E1E',
+                            orange: '#F97316',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Lobster', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-700 flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-4 gap-8">
+        <div class="flex items-center gap-3">
+          <img src="../../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-10 w-auto" />
+        </div>
+        
+        <nav class="hidden lg:flex items-center gap-2">
+          <a href="#accueil" class="nav-link px-4 py-2 text-xs font-medium text-gray-600  rounded-xl transition-all hover:bg-red-100 hover:-translate-y-0.5">
+            <span>Accueil</span>
+          </a>
+          <a href="#restaurants" class="nav-link px-4 py-2 text-xs font-medium text-gray-600 rounded-xl transition-all hover:text-brand-orange hover:bg-orange-50 hover:-translate-y-0.5">
+            <span>Restaurants</span>
+          </a>
+          <a href="#promos" class="nav-link px-4 py-2 text-xs font-medium text-brand-red bg-red-50  rounded-xl transition-all hover:text-brand-orange hover:bg-orange-50 hover:-translate-y-0.5">
+            <span>Promotions</span>
+          </a>
+          <a href="RepaSain/Composition.html" class="nav-link px-4 py-2 text-xs font-medium text-gray-600 rounded-xl transition-all hover:text-brand-orange hover:bg-orange-50 hover:-translate-y-0.5">
+            <span>Composition</span>
+          </a>
+          <a href="#contact" class="nav-link px-4 py-2 text-xs font-medium text-gray-600 rounded-xl transition-all hover:text-brand-orange hover:bg-orange-50 hover:-translate-y-0.5">
+            <span>Contact</span>
+          </a>
+        </nav>
+        
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10 text-xs"></i>
+            <input type="text" placeholder="Rechercher..." class="pl-10 pr-4 py-2 border border-gray-200 rounded-full w-48 text-xs bg-white transition-all focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-red-100" />
+          </div>
+          <button class="relative flex items-center justify-center w-10 h-10 bg-gray-100 text-gray-600 rounded-full transition-all hover:bg-orange-100 hover:text-brand-orange hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-sm"></i>
+            <span class="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-semibold w-4 h-4 rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </button>
+          <button class="flex items-center justify-center w-10 h-10 bg-gray-100 text-gray-600 rounded-full transition-all hover:bg-orange-100 hover:text-brand-orange hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <main class="flex-grow max-w-5xl mx-auto w-full px-4 py-6"> <h1 class="text-2xl md:text-3xl font-display text-brand-darkRed text-shadow text-center mb-6 tracking-wide">
+            Promotion > Jouer pour gagner des récompenses
+        </h1>
+
+        <div class="flex justify-center items-center gap-3 mb-6">
+            <span class="text-xl md:text-2xl font-display text-brand-red tracking-wider">
+                Temps restant: 01 min :00 Sec
+            </span>
+            <i class="far fa-eye text-brand-red text-xl md:text-2xl"></i>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+
+            <div class="md:col-span-1 border border-red-200 rounded-2xl p-6 flex flex-col justify-center text-center shadow-sm h-full">
+                <h2 class="text-xl font-display text-brand-red mb-4">Concept du jeu</h2>
+                <p class="text-sm text-gray-700 font-medium leading-relaxed">
+                    Combiner les pizzas similaires dans la même colonne, en moins d'une minute pour gagner de l'argent à ajouter dans cha9a9ti.
+                </p>
+            </div>
+
+            <div class="md:col-span-2 flex flex-col sm:flex-row gap-6 items-start justify-center">
+                
+                <div class="flex-shrink-0">
+                    <div class="grid grid-cols-3 gap-2 bg-white p-3 rounded-xl shadow-md border border-gray-100 w-[240px]">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=300&h=300&fit=crop" class="w-full aspect-square object-cover rounded-full hover:scale-105 transition cursor-pointer border border-transparent hover:border-red-300">
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3 w-full max-w-[260px]">
+                    
+                    <div class="relative w-full bg-[#DCEFE0] border border-green-300 rounded-lg p-3 shadow-sm flex flex-col items-start gap-2">
+                        <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xs">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="flex items-center gap-2">
+                             <i class="fas fa-info-circle text-gray-700"></i>
+                             <p class="text-gray-800 font-bold text-sm">Félicitations</p>
+                        </div>
+                        
+                        <p class="text-gray-700 text-xs font-medium leading-tight">Vous avez gagné 2 DT à mettre dans Cha9a9ti</p>
+                        
+                        <a href="chakakti.html" class="bg-[#333333] hover:bg-black text-white text-[10px] font-bold py-1.5 px-3 rounded shadow transition whitespace-nowrap mt-1 self-end">
+                            Consulter Cha9a9ti
+                        </a>
+                    </div>
+
+                    <div class="relative w-full bg-brand-red text-white rounded-lg p-3 shadow-sm flex items-center justify-start gap-3">
+                        <button class="absolute top-2 right-2 text-white/80 hover:text-white text-xs">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div>
+                            <i class="far fa-times-circle text-xl"></i>
+                        </div>
+                        
+                        <div class="text-left">
+                            <p class="font-bold text-sm">Oups</p>
+                            <p class="text-xs font-medium">Ton temps est écoulé !</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#1F1F1F] text-gray-400 mt-auto pt-8 pb-4">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Rejoignez notre communauté</h4>
+                    <p class="text-[10px] leading-relaxed mb-3">Révolutionnez votre façon de manger avec nos plats 100% personnalisables.</p>
+                    <div class="flex gap-2">
+                        <a href="#" class="bg-[#1877F2] text-white h-6 w-6 rounded-full flex items-center justify-center text-xs"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="bg-gradient-to-tr from-yellow-400 to-purple-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-xs"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="bg-[#1DA1F2] text-white h-6 w-6 rounded-full flex items-center justify-center text-xs"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Navigation</h4>
+                    <ul class="space-y-1 text-[10px]">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Nos Restaurants</a></li>
+                        <li><a href="#">Promotions</a></li>
+                        <li><a href="#">Composer mon plat</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Services</h4>
+                    <ul class="space-y-1 text-[10px]">
+                        <li><a href="#">Livraison Express</a></li>
+                        <li><a href="#">Carte Cadeau</a></li>
+                        <li><a href="#">Programme Fidélité</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Newsletter</h4>
+                    <div class="flex">
+                        <input type="email" placeholder="Email..." class="bg-[#2D2D2D] text-gray-200 px-2 py-1 rounded-l-md w-full text-[10px] border border-transparent">
+                        <button class="bg-[#EA4335] px-2 py-1 rounded-r-md"></button>
+                    </div>
+                    <p class="text-[9px] text-gray-500 mt-1">-10% sur votre première commande.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-3 flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-500">
+                <p>© 2025 EspritMeal. Tous droits réservés.</p>
+                <div class="flex gap-3 mt-1 md:mt-0">
+                    <span>Paiement sécurisé</span>
+                    <span>Livraison rapide</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
