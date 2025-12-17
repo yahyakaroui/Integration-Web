@@ -1,0 +1,203 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EsprMeal - Create Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* CSS personnalisé pour le fond et l'effet de superposition */
+        .bg-hero {
+            background-image: url('patron.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Assombrissement léger */
+        }
+        /* Style pour le texte 'manger autrement' */
+        .manger-autrement {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-red-600/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between py-5 gap-8">
+                <div class="flex items-center gap-3">
+                    <img src="LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+                </div>
+                
+                <nav class="hidden lg:flex items-center gap-2">
+                    <a href="#accueil" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-red-800 hover:bg-red-800/10 hover:-translate-y-0.5">
+                        <span>Accueil</span>
+                    </a>
+                    <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-red-800 hover:bg-red-800/10 hover:-translate-y-0.5">
+                        <span>Restaurants</span>
+                    </a>
+                    <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-red-800 hover:bg-red-800/10 hover:-translate-y-0.5">
+                        <span>Promotions</span>
+                    </a>
+                    <a href="RepaSain/Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-red-800 hover:bg-red-800/10 hover:-translate-y-0.5">
+                        <span>Composition</span>
+                    </a>
+                    <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-red-800 hover:bg-red-800/10 hover:-translate-y-0.5">
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center relative">
+                        <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+                        <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/10" />
+                    </div>
+                    <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-red-800/10 hover:text-red-800 hover:-translate-y-0.5">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+                    </button>
+                    <a href="signin/signup/signin.html" class="flex items-center justify-center w-12 h-12 bg-red-600/10 text-red-600 rounded-xl transition-all">
+                        <i class="fas fa-user-circle text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow bg-hero relative">
+        <div class="overlay absolute inset-0"></div>
+        
+        <div class="relative max-w-7xl mx-auto h-full flex items-center justify-between px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex-1 hidden lg:block">
+                <img src="esprimeal.png" alt="Logo EsprMeal" class="w-96 h-auto"> 
+            </div>
+            <div class="lg:w-1/3 w-full max-w-md p-8 bg-white rounded-lg shadow-xl ml-auto">
+                <h2 class="text-sm font-semibold mb-1 text-red-600">LET'S GET YOU STARTED</h2>
+                <h3 class="text-xl font-medium mb-8 text-gray-800">Create an Account</h3>
+                
+                <form class="space-y-4" action="../../Accueil.html" method="get">
+                    <div>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" value="yahya karoui" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" value="yahya.karoui@esprit.tn" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500" placeholder="Email">
+                    </div>
+                    <div class="relative">
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" id="password" name="password" value="********" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500" placeholder="Password">
+                        <button type="button" class="absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </button>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-150 mt-6">
+                        GET STARTED
+                    </button>
+                </form>
+                
+                <div class="flex items-center my-6">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="flex-shrink mx-4 text-gray-500">Or</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+
+                <div class="space-y-3">
+                    <button class="w-full flex items-center justify-center py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150">
+                        <svg class="w-5 h-5 mr-2 text-red-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.24 10.29v2.17h6.42c-.22 1.25-.97 2.37-2.06 3.12-.13.08-.27.16-.41.22H18v-2.09c0-1.15.54-2.07 1.48-2.61.94-.55 2.23-.88 3.75-.88h.01v-2.17h-2.18c-3.13 0-5.69 2.56-5.69 5.69s2.56 5.69 5.69 5.69c1.93 0 3.65-.96 4.88-2.52h-2.18v-2.17h6.08c.17 1.05.27 2.14.27 3.23 0 4.67-3.23 8.35-8.48 8.35-4.57 0-8.28-3.71-8.28-8.28s3.71-8.28 8.28-8.28c2.47 0 4.7.99 6.3 2.6z"></path></svg>
+                        Sign up with **Google**
+                    </button>
+                    <button class="w-full flex items-center justify-center py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150">
+                        <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.143 3.791 9.424 8.75 9.923V15.75h-2.625V12.5h2.625V9.75c0-2.587 1.574-3.999 3.896-3.999 1.108 0 2.052.083 2.332.12v2.708h-1.638c-1.29 0-1.54 1.144-1.54 2.125V12.5h3.018l-.478 3.25h-2.54V21.923C18.209 21.424 22 17.143 22 12 22 6.477 17.523 2 12 2z"></path></svg>
+                        Sign up with **Facebook**
+                    </button>
+                    <button class="w-full flex items-center justify-center py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition duration-150">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.036c.801 0 1.603.111 2.39.333a9.713 9.713 0 014.288 2.66c.866.866 1.57 1.84 2.115 2.912.545 1.072.827 2.21.849 3.364.022 1.154-.251 2.292-.782 3.364-.531 1.072-1.233 2.046-2.1 2.912-.866.866-1.57 1.84-2.115 2.912-.545 1.072-.827 2.21-.849 3.364-.022-1.154.251 2.292.782-3.364.531-1.072 1.233-2.046 2.1 2.912.866.866 1.84 1.57 2.912 2.115 1.072.545 2.21.827 3.364.849z"></path></svg>
+                        Sign up with **Apple**
+                    </button>
+                </div>
+
+                <p class="mt-8 text-center text-sm text-gray-600">
+                    Already have an account? <a href="signin.html" class="font-bold text-red-600 hover:text-red-700">LOGIN HERE</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white pt-10 pb-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-red-500">EsprMeal</h3>
+                    <p class="text-sm text-gray-400 mb-6">
+                        Révolutionnez votre façon de manger avec nos plats 100% personnalisables. Des ingrédients frais, une livraison rapide, une expérience unique.
+                    </p>
+                    <h4 class="font-bold mb-2">Rejoignez notre communauté</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-full hover:opacity-80 transition duration-150"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.075 10H17l1-3h-4.998c-.285-.883-1.05-1.5-2.002-1.5h-2c-1.104 0-2 .896-2 2v3h-3v3h3v9h4v-9h3.729l.471-3H14.075z"></path></svg></a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-pink-500 rounded-full hover:opacity-80 transition duration-150"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.195 4.88c.08.384.09.77.01 1.152-.08 1.152-.77 2.28-1.92 2.97-1.152.69-2.52.83-3.792.42-.48-.15-.96-.42-1.392-.72-.432-.3-.81-.66-1.128-1.08-.456-.63-.72-1.41-.72-2.28 0-1.152.48-2.28 1.488-3.12 1.008-.84 2.376-1.23 3.744-1.176 1.44.072 2.76.624 3.792 1.512.24.216.48.432.672.648.192.216.36.432.48.648.096.216.192.432.24.648.048.216.072.432.072.648z"></path></svg></a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-blue-400 rounded-full hover:opacity-80 transition duration-150"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6.955c-.752.333-1.564.555-2.414.654.865-.518 1.536-1.334 1.849-2.304-.808.47-1.706.812-2.656.993-.762-.81-1.845-1.315-3.064-1.315-2.324 0-4.207 1.883-4.207 4.207 0 .331.037.653.11.96-.349-.017-.7-.033-1.05-.033-2.91 0-5.485-1.536-7.21-3.664-.302.518-.475 1.12-.475 1.764 0 1.258.64 2.372 1.61 3.02-.596-.018-1.155-.184-1.646-.455v.05c0 2.036 1.445 3.738 3.359 4.12-.351.095-.72.146-1.098.146-.269 0-.53-.026-.785-.074.536 1.666 2.094 2.878 3.935 2.913-1.43 1.12-3.238 1.787-5.207 1.787-.339 0-.67-.02-.996-.058 1.848 1.187 4.045 1.88 6.386 1.88 7.662 0 11.83-6.347 11.83-11.83 0-.181-.004-.362-.012-.542.812-.587 1.516-1.313 2.074-2.144z"></path></svg></a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-red-600 rounded-full hover:opacity-80 transition duration-150"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.14a2.793 2.793 0 00-2.029-.982c-3.769-.283-7.519-.283-11.288 0a2.793 2.793 0 00-2.029.982c-.378.435-.615.976-.708 1.55-.224 1.44-.224 2.88-.002 4.32.093.574.33 1.115.708 1.55a2.793 2.793 0 002.029.982c3.769.283 7.519.283 11.288 0a2.793 2.793 0 002.029-.982c.378-.435.615-.976.708-1.55.224-1.44.224-2.88.002-4.32-.093-.574-.33-1.115-.708-1.55zM9.545 15.65v-7.3l5.962 3.65-5.962 3.65z"></path></svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-red-500">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-red-400">Accueil</a></li>
+                        <li><a href="#" class="hover:text-red-400">Nos Restaurants</a></li>
+                        <li><a href="#" class="hover:text-red-400">Promotions</a></li>
+                        <li><a href="#" class="hover:text-red-400">Composer mon plat</a></li>
+                        <li><a href="#" class="hover:text-red-400">Avis clients</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-red-500">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-red-400">Livraison Express</a></li>
+                        <li><a href="#" class="hover:text-red-400">Carte Cadeau</a></li>
+                        <li><a href="#" class="hover:text-red-400">Programme Fidélité</a></li>
+                        <li><a href="#" class="hover:text-red-400">Devenir Partenaire</a></li>
+                        <li><a href="#" class="hover:text-red-400">Centre d'Aide</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4 text-red-500">Contact & Infos</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>1, 2 rue André Ampère -</li>
+                        <li>2083 - Pôle</li>
+                        <li>Technologique - El</li>
+                        <li>Ghazala.</li>
+                        <li>**+216 20308557**</li>
+                        <li>twinova@espritmeal.com</li>
+                        <li class="pt-2">Lun-Dim: 11h-23h</li>
+                    </ul>
+
+                    <h4 class="font-bold mb-4 text-red-500">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-3">Recevez nos meilleures offres et nouveautés en avant-première !</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email..." class="py-2 px-3 text-sm rounded-l-md w-full focus:outline-none text-gray-800">
+                        <button class="bg-red-600 text-white py-2 px-4 rounded-r-md hover:bg-red-700 transition duration-150">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L15.17 11H3v2h12.17l-4.58 4.59L12 20l8-8z"></path></svg>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">-10% sur votre première commande</p>
+                    <p class="text-xs text-gray-500">Alertes promos exclusives</p>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+                <p class="text-sm text-gray-400">© 2025 EsprMeal. Tous droits réservés. | <a href="#" class="hover:text-red-400">Mentions Légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
