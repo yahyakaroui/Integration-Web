@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EspritMeal - Rapport détaillé</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -34,14 +36,17 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .bg-gradient-primary {
       background: linear-gradient(135deg, #CD1010 0%, #FF7043 100%);
     }
+
     .bg-gradient-success {
       background: linear-gradient(135deg, #288E3E 0%, #4CAF50 100%);
     }
   </style>
 </head>
+
 <body class="font-sans bg-gradient-to-b from-gray-50 to-white text-gray-900">
 
   <!-- Header -->
@@ -51,37 +56,50 @@
         <div class="flex items-center gap-3 flex-shrink-0">
           <img src="../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
         </div>
-        
+
         <nav class="hidden xl:flex items-center gap-2">
-          <a href="../Accueil.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <a href="../Accueil.html"
+            class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
             <span>Accueil</span>
           </a>
-          <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <a href="#restaurants"
+            class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
             <span>Restaurants</span>
           </a>
-          <a href="#promos" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <a href="../Promotions/Nour/index.html"
+            class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
             <span>Promotions</span>
           </a>
-          <a href="Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+          <a href="Composition.html"
+            class="nav-link px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
             <span>Composition</span>
           </a>
-          <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+          <a href="#contact"
+            class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
             <span>Contact</span>
           </a>
         </nav>
-        
+
         <div class="flex items-center gap-4 flex-shrink-0">
           <div class="hidden lg:flex items-center relative">
             <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
-            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-64 xl:w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+            <input type="text" placeholder="Rechercher un plat..."
+              class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-64 xl:w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
           </div>
-          <button class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
-            <i class="fas fa-shopping-cart text-xl"></i>
-            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
-          </button>
-          <button class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
-            <i class="fas fa-user-circle text-xl"></i>
-          </button>
+          <a href="../Commandes/Yahia/vos_comm.html">
+            <button
+              class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+            </button>
+          </a>
+          <a href="../signup/signin/signin.html">
+            <button
+              class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+              <i class="fas fa-user-circle text-xl"></i>
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -89,29 +107,32 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-6 py-12">
-    
+
     <!-- Title -->
     <h1 class="text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-12">
       Rapport détaillé
     </h1>
 
     <div class="grid lg:grid-cols-2 gap-10 items-start">
-      
+
       <!-- Left Section - Analyse Nutritionnelle -->
       <div class="bg-white rounded-3xl shadow-xl p-8">
-        
+
         <!-- Header with Title and Badge -->
         <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
           <h2 class="text-2xl font-bold text-gray-900">Analyse Nutritionnelle</h2>
           <div class="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-full">
-            <span class="w-8 h-8 bg-white text-orange-500 rounded-lg flex items-center justify-center font-bold text-lg">D</span>
+            <span
+              class="w-8 h-8 bg-white text-orange-500 rounded-lg flex items-center justify-center font-bold text-lg">D</span>
             <span class="font-semibold text-sm">Nutri-Score Passable</span>
           </div>
         </div>
 
         <!-- Description -->
         <p class="text-gray-600 leading-relaxed mb-8">
-          Votre pizza présente un profil nutritionnel équilibré avec des points d'amélioration. La base de sauce tomate apporte des antioxydants naturels, tandis que la mozzarella fournit protéines et calcium. Attention à la densité calorique élevée due aux matières grasses.
+          Votre pizza présente un profil nutritionnel équilibré avec des points d'amélioration. La base de sauce tomate
+          apporte des antioxydants naturels, tandis que la mozzarella fournit protéines et calcium. Attention à la
+          densité calorique élevée due aux matières grasses.
         </p>
 
         <!-- Nutrition Table -->
@@ -184,36 +205,43 @@
 
       <!-- Right Section - Nutri-Score and Pizza -->
       <div class="flex flex-col items-center">
-        
+
         <!-- Nutri-Score Letters -->
         <div class="flex items-center gap-2 mb-10">
-          <div class="w-14 h-14 rounded-xl bg-green-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+          <div
+            class="w-14 h-14 rounded-xl bg-green-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
             A
           </div>
-          <div class="w-12 h-12 rounded-xl bg-lime-400 flex items-center justify-center text-white text-xl font-bold shadow-md">
+          <div
+            class="w-12 h-12 rounded-xl bg-lime-400 flex items-center justify-center text-white text-xl font-bold shadow-md">
             B
           </div>
-          <div class="w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center text-white text-xl font-bold shadow-md">
+          <div
+            class="w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center text-white text-xl font-bold shadow-md">
             C
           </div>
-          <div class="w-14 h-14 rounded-xl bg-orange-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg ring-4 ring-orange-200">
+          <div
+            class="w-14 h-14 rounded-xl bg-orange-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg ring-4 ring-orange-200">
             D
           </div>
-          <div class="w-12 h-12 rounded-xl bg-red-500 flex items-center justify-center text-white text-xl font-bold shadow-md">
+          <div
+            class="w-12 h-12 rounded-xl bg-red-500 flex items-center justify-center text-white text-xl font-bold shadow-md">
             E
           </div>
         </div>
 
         <!-- Pizza Image -->
         <div class="relative">
-          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=400&fit=crop" alt="Pizza" class="w-80 h-80 object-cover rounded-full shadow-2xl border-8 border-white" />
+          <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=400&fit=crop" alt="Pizza"
+            class="w-80 h-80 object-cover rounded-full shadow-2xl border-8 border-white" />
         </div>
       </div>
     </div>
 
     <!-- Améliorer la Recette Button -->
     <div class="text-center mt-10">
-      <a href="AméliorationAI.html" class="inline-block bg-gradient-primary text-white px-12 py-4 rounded-xl font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+      <a href="AméliorationAI.html"
+        class="inline-block bg-gradient-primary text-white px-12 py-4 rounded-xl font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl">
         Améliorer la Recette
       </a>
     </div>
@@ -221,8 +249,10 @@
 
   <!-- Footer -->
   <footer class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden mt-12">
-    <div class="absolute inset-0 opacity-5" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
-    
+    <div class="absolute inset-0 opacity-5"
+      style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)">
+    </div>
+
     <div class="relative z-10 pt-20 pb-8">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -235,13 +265,16 @@
               Révolutionnez votre façon de manger avec nos plats 100% personnalisables.
             </p>
             <div class="flex gap-3">
-              <a href="#" class="w-10 h-10 rounded-full bg-blue-600/20 hover:bg-blue-600 flex items-center justify-center text-white transition-all hover:-translate-y-1">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-blue-600/20 hover:bg-blue-600 flex items-center justify-center text-white transition-all hover:-translate-y-1">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="w-10 h-10 rounded-full bg-pink-600/20 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white transition-all hover:-translate-y-1">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-pink-600/20 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white transition-all hover:-translate-y-1">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="#" class="w-10 h-10 rounded-full bg-blue-400/20 hover:bg-blue-400 flex items-center justify-center text-white transition-all hover:-translate-y-1">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-blue-400/20 hover:bg-blue-400 flex items-center justify-center text-white transition-all hover:-translate-y-1">
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
@@ -251,9 +284,12 @@
             <h4 class="text-white text-lg font-bold mb-5">Navigation</h4>
             <ul class="space-y-3">
               <li><a href="../Accueil.html" class="text-gray-400 hover:text-secondary transition-all">Accueil</a></li>
-              <li><a href="../Accueil.html#restaurants" class="text-gray-400 hover:text-secondary transition-all">Restaurants</a></li>
-              <li><a href="../Accueil.html#promos" class="text-gray-400 hover:text-secondary transition-all">Promotions</a></li>
-              <li><a href="Composition.html" class="text-gray-400 hover:text-secondary transition-all">Composition</a></li>
+              <li><a href="../Accueil.html#restaurants"
+                  class="text-gray-400 hover:text-secondary transition-all">Restaurants</a></li>
+              <li><a href="../Accueil.html#promos"
+                  class="text-gray-400 hover:text-secondary transition-all">Promotions</a></li>
+              <li><a href="Composition.html" class="text-gray-400 hover:text-secondary transition-all">Composition</a>
+              </li>
             </ul>
           </div>
 
@@ -293,4 +329,5 @@
   </footer>
 
 </body>
+
 </html>
