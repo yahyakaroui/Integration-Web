@@ -1,19 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../../../dist/output.css" rel="stylesheet">
-  <title>Twinova</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EspritMeal - Commande</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ef4444',   /* Rouge Esprit */
+                        secondary: '#f97316', /* Orange */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hidden-section { display: none; }
+        .card-border { border: 1px solid #fca5a5; }
+        #qr-modal { background-color: rgba(0,0,0,0.8); }
+    </style>
 </head>
-<body>
-  <div class="flex flex-col justify-center items-center h-screen">
-      <div class="bg-cover bg-no-repeat w-full"
-          style="background-image: url('https://images.unsplash.com/photo-1530053969600-caed2596d242');">
-          <h1 class="py-10 font-black text-8xl md:text-9xl bg-gray-100 mix-blend-lighten uppercase text-center">
-              Twinova
-          </h1>
-      </div>
-  </div>
+<body class="bg-white font-sans">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between py-5 gap-8">
+                <div class="flex items-center gap-3">
+                    <img src="https://i.imgur.com/GvE9SIn.png" alt="EspritMeal" class="h-12 w-auto cursor-pointer" onclick="showSection('menu')" />
+                </div>
+                
+                <nav class="hidden lg:flex items-center gap-2">
+                    <a href="#" onclick="showSection('menu')" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        <span>Accueil</span>
+                    </a>
+                    <a href="#restaurants" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        <span>Restaurants</span>
+                    </a>
+                    <a href="#" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+                        <span>Promotions</span>
+                    </a>
+                    <a href="#" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        <span>Composition</span>
+                    </a>
+                    <a href="#contact" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center relative">
+                        <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+                        <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+                    </div>
+                    <a href="#" class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+                    </a>
+                    <a href="#" class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+                        <i class="fas fa-user-circle text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="section-menu" class="container mx-auto px-4 py-10">
+        <h1 class="text-4xl text-center text-red-800 font-serif mb-12">Menu</h1>
+        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            </div>
+    </main>
+
+    <section id="section-detail" class="container mx-auto px-4 py-10 hidden-section">
+        <div class="max-w-4xl mx-auto card-border p-6 text-center">
+            <img id="detail-img" src="" class="w-full h-80 object-cover mb-6 rounded shadow-sm">
+            <h2 id="detail-title" class="text-xl font-bold mb-2"></h2>
+            <p id="detail-price" class="text-gray-900 font-bold text-lg mb-4"></p>
+            <p id="detail-desc" class="text-gray-600 text-sm mb-10 px-6 leading-relaxed"></p>
+            <div class="flex justify-center space-x-6">
+                <button onclick="startWaiting()" class="bg-[#e44d26] text-white px-10 py-4 rounded-xl font-bold uppercase text-xs transition hover:bg-red-700">paiement à la caisse</button>
+                <button onclick="showSection('paiement')" class="bg-[#e44d26] text-white px-10 py-4 rounded-xl font-bold uppercase text-xs transition hover:bg-red-700">paiement en ligne</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-paiement" class="container mx-auto px-4 py-10 hidden-section">
+        <div class="max-w-xl mx-auto border-2 border-red-100 rounded-2xl p-8">
+            <img id="pay-img" src="" class="w-full h-44 object-cover rounded-xl mb-8 shadow-sm">
+            <form onsubmit="confirmPayment(event)" class="space-y-5">
+                <input type="text" required placeholder="Nom Sur La Carte" class="w-full border-2 border-red-100 rounded-xl p-4 outline-none focus:border-primary">
+                <input type="text" required placeholder="Numéro De La Carte" class="w-full border-2 border-red-100 rounded-xl p-4 outline-none focus:border-primary">
+                <div class="flex gap-4">
+                    <input type="text" required placeholder="MM/AA" class="w-1/2 border-2 border-red-100 rounded-xl p-4 outline-none focus:border-primary">
+                    <input type="text" required placeholder="***" class="w-1/2 border-2 border-red-100 rounded-xl p-4 outline-none focus:border-primary">
+                </div>
+                <div class="flex gap-4 pt-6">
+                    <button type="button" onclick="showSection('detail')" class="w-1/2 bg-orange-500 text-white py-4 rounded-xl font-bold uppercase transition hover:bg-orange-600">Annuler</button>
+                    <button type="submit" class="w-1/2 bg-red-600 text-white py-4 rounded-xl font-bold uppercase transition hover:bg-red-700">Payer</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="section-tracker" class="container mx-auto px-4 py-10 hidden-section">
+        <div class="max-w-2xl mx-auto bg-[#ffece6] rounded-[3rem] p-12 text-center shadow-sm">
+            <img id="track-img" src="" class="w-36 h-24 object-cover mx-auto rounded-xl mb-8 shadow-md">
+            <h2 class="text-2xl font-bold mb-10 text-gray-800">Vous devrez attendre :</h2>
+            <div class="flex justify-center items-center space-x-6 mb-14">
+                <div id="mins" class="bg-[#34a853] text-white text-8xl p-8 rounded-3xl font-mono shadow-lg">07</div>
+                <div class="text-6xl font-bold text-gray-700">:</div>
+                <div id="secs" class="bg-[#e8f0fe] text-gray-700 text-8xl p-8 rounded-3xl font-mono shadow-inner">47</div>
+            </div>
+            <div class="flex justify-center gap-6">
+                <button onclick="showSection('paiement')" class="bg-[#e44d26] text-white px-10 py-4 rounded-2xl font-bold uppercase text-xs transition hover:scale-105">paiement en ligne</button>
+                <button onclick="toggleQR(true)" class="bg-[#e44d26] text-white px-10 py-4 rounded-2xl font-bold uppercase text-xs transition hover:scale-105">Voir Qr Code</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="qr-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-[2rem] p-10 max-w-sm w-full text-center relative border-4 border-primary">
+            <button onclick="toggleQR(false)" class="absolute top-6 right-6 text-gray-400 hover:text-red-500 text-3xl">&times;</button>
+            <h3 class="text-2xl font-bold mb-6 text-gray-800">Votre QR Code</h3>
+            <div class="bg-gray-100 p-6 rounded-2xl mb-8 inline-block shadow-inner">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EspritMealOrder" alt="QR Code" class="w-52 h-52 mx-auto">
+            </div>
+            <button onclick="toggleQR(false)" class="w-full bg-primary text-white py-4 rounded-xl font-bold uppercase transition hover:bg-red-700">Fermer</button>
+        </div>
+    </div>
+
+    <footer class="bg-zinc-900 text-white py-16 mt-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-400">
+            <div class="space-y-6">
+                <p class="leading-relaxed">Révolutionnez votre façon de manger avec nos plats 100% personnalisables.</p>
+                <div class="flex space-x-4 text-2xl">
+                    <i class="fab fa-facebook hover:text-white transition"></i>
+                    <i class="fab fa-instagram hover:text-white transition"></i>
+                    <i class="fab fa-tiktok hover:text-white transition"></i>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 border-b-2 border-primary w-10 pb-2">Navigation</h4>
+                <ul class="space-y-3"><li>Accueil</li><li>Nos Restaurants</li><li>Promotions</li></ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 border-b-2 border-primary w-10 pb-2">Services</h4>
+                <ul class="space-y-3"><li>Livraison Express</li><li>Carte Cadeau</li><li>Centre d'Aide</li></ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 border-b-2 border-primary w-10 pb-2">Contact</h4>
+                <p class="leading-relaxed">1, 2 rue André Ampère<br>+216 20308557<br>twinova@espritmeal.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const produits = [
+            { id: 1, nom: "Pizza", prix: "15 dt", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500", desc: "Sauce tomate, mozzarella, poivrons rouges et jaunes, origan frais courgettes grillées, champignons de Paris, oignons rouges." },
+            { id: 2, nom: "Tacos", prix: "10 dt", img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500", desc: "Tacos savoureux avec frites croustillantes et sauce fromagère maison." },
+            { id: 3, nom: "Spagetti", prix: "25 dt", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500", desc: "Pâtes italiennes traditionnelles sauce bolognaise." },
+            { id: 4, nom: "Poisson", prix: "15 dt", img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500", desc: "Filet de poisson grillé aux herbes de Provence." },
+            { id: 5, nom: "Burger Gourmet", prix: "15 dt", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500", desc: "Steak frais et cheddar affiné." },
+            { id: 6, nom: "Salade César", prix: "12 dt", img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500", desc: "Salade fraîche et poulet grillé." },
+            { id: 7, nom: "Poulet Rôti", prix: "20 dt", img: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=500", desc: "Poulet entier cuit à la perfection." },
+            { id: 8, nom: "Pizza Végé", prix: "13 dt", img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500", desc: "Légumes du jardin et basilic frais." }
+        ];
+
+        let timerActive = false;
+
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = produits.map(p => `
+                <div class="card-border p-5 text-center bg-white transition hover:shadow-lg rounded-xl">
+                    <img src="${p.img}" class="w-full h-44 object-cover mb-4 rounded-lg">
+                    <h3 class="font-bold text-left text-sm text-gray-800">${p.nom}</h3>
+                    <p class="font-bold text-left text-sm text-gray-900">${p.prix}</p>
+                    <button onclick="openDetail(${p.id})" class="text-xs text-gray-400 block text-left mt-3 hover:text-primary transition underline font-medium">Voir PLus</button>
+                </div>
+            `).join('');
+        }
+
+        function showSection(id) {
+            ['menu', 'detail', 'paiement', 'tracker'].forEach(s => document.getElementById('section-' + s).classList.add('hidden-section'));
+            document.getElementById('section-' + id).classList.remove('hidden-section');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function openDetail(id) {
+            const p = produits.find(x => x.id === id);
+            document.getElementById('detail-img').src = p.img;
+            document.getElementById('detail-title').innerText = p.nom;
+            document.getElementById('detail-price').innerText = p.prix;
+            document.getElementById('detail-desc').innerText = p.desc;
+            document.getElementById('pay-img').src = p.img;
+            document.getElementById('track-img').src = p.img;
+            showSection('detail');
+        }
+
+        function confirmPayment(e) {
+            e.preventDefault();
+            startWaiting();
+        }
+
+        function startWaiting() {
+            showSection('tracker');
+            if (!timerActive) startTimer();
+        }
+
+        function toggleQR(show) {
+            document.getElementById('qr-modal').classList.toggle('hidden', !show);
+        }
+
+        function startTimer() {
+            timerActive = true;
+            let time = 7 * 60 + 47; // 07:47
+            const m = document.getElementById('mins');
+            const s = document.getElementById('secs');
+            const interval = setInterval(() => {
+                time--;
+                m.innerText = String(Math.floor(time / 60)).padStart(2, '0');
+                s.innerText = String(time % 60).padStart(2, '0');
+                if(time <= 0) {
+                    clearInterval(interval);
+                    timerActive = false;
+                }
+            }, 1000);
+        }
+
+        renderMenu();
+    </script>
 </body>
 </html>
