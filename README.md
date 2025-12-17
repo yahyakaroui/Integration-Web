@@ -32,22 +32,37 @@
 ---
 
 ### 🔹 Interface – Malek Fridhi
-![Interface Malek](screenshots/malek_interface.png)
+![Interface Malek](public/m1.png)
+![Interface Malek](public/m2.png)
+![Interface Malek](public/m3.png)
+![Interface Malek](public/m4.png)
+![Interface Malek](public/m5.png)
 
 ---
 
 ### 🔹 Interface – Khalil Triki
-![Interface Khalil](screenshots/khalil_interface.png)
+![Interface Khalil](public/k1.png)
+![Interface Khalil](public/k2.png)
+![Interface Khalil](public/k3.png)
+![Interface Khalil](public/k4.png)
+![Interface Khalil](public/k5.png)
 
 ---
 
 ### 🔹 Interface – Nour Bouslimi
-![Interface Nour](screenshots/nour_interface.png)
+![Interface Nour](public/n1.png)
+![Interface Nour](public/n2.png)
+![Interface Nour](public/n3.png)
+![Interface Nour](public/n4.png)
 
 ---
 
 ### 🔹 Interface – Nasef Fadhlaoui
-![Interface Nasef](screenshots/nasef_interface.png)
+![Interface Nasef](public/na1.png)
+![Interface Nasef](public/na2.png)
+![Interface Nasef](public/na3.png)
+![Interface Nasef](public/na4.png)
+![Interface Nasef](public/na5.png)
 
 ---
 
