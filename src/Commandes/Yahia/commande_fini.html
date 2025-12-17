@@ -1,0 +1,238 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EsprMeal - Commande Prête</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* Définitions de couleurs pour Tailwind (cohérence avec EsprMeal) */
+        .text-red-600 { color: #dc2626; }
+        .bg-red-600 { background-color: #dc2626; }
+        .border-red-600 { border-color: #dc2626; }
+        .hover\:bg-red-700:hover { background-color: #b91c1c; }
+        .text-red-800 { color: #991b1b; }
+        .bg-red-800\/10 { background-color: rgba(153, 27, 27, 0.1); }
+        .font-serif-custom {
+            font-family: 'Georgia', serif; 
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between py-5 gap-8">
+                <div class="flex items-center gap-3">
+                    <img src="../../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+                </div>
+                
+                <nav class="hidden lg:flex items-center gap-2">
+                    <a href="../../Accueil.html" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Accueil</span>
+                    </a>
+                    <a href="#restaurants" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Restaurants</span>
+                    </a>
+                    <a href="../Nour/index.html" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+                        
+                        <span>Promotions</span>
+                    </a>
+                    <a href="../../RepaSain/Composition.html" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Composition</span>
+                    </a>
+                    <a href="#contact" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <a href="Commandes/Yahia/vos_comm.html" class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </a>
+          <a href="../../signin/signup/signin.html" class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
+          </a>
+        </div>
+            </div>
+        </div>
+    </header>
+
+   <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+
+        <h1 class="text-3xl font-serif-custom text-red-600 text-center mb-10">
+            Commande
+        </h1>
+
+        <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
+
+            <!-- CONTENU CENTRALISÉ -->
+            <div class="flex flex-col items-center space-y-8">
+
+                <!-- TITRE -->
+                <h2 class="text-xl font-bold text-gray-800">
+                    Votre choix :
+                </h2>
+
+                <!-- IMAGE -->
+                <div class="border border-red-300 p-1 rounded-lg w-full max-w-xl">
+                    <img
+                        src="french-tacos-750x400.png"
+                        alt="Plat choisi"
+                        class="w-full h-auto rounded-md object-cover"
+                    >
+                </div>
+
+               
+
+                <!-- DESCRIPTION -->
+                <div class="w-full max-w-xl text-center">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">
+                        Description
+                    </h3>
+
+                    <div class="border border-red-300 p-4 rounded-lg bg-red-50 min-h-[150px]">
+                        <p class="text-sm text-gray-700">
+                            Votre tacos contient de la viande hachée, des frites croustillantes
+                            et une sauce fromagère fondante, le tout enveloppé dans une galette
+                            de blé dorée pour un goût savoureux et gourmand.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+             <!-- CHECK ICON -->
+                <div class="flex justify-center items-center">
+                    <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+        </div>
+        
+
+        <!-- NOTIFICATION -->
+        <div class="fixed bottom-8 right-8 z-50">
+            <div class="bg-white p-4 rounded-lg shadow-2xl flex items-start border border-gray-200">
+                <div class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-gray-800 mt-1" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+
+                    <div>
+                        <p class="text-sm font-semibold text-gray-800">EsprMeal</p>
+                        <p class="text-xs text-gray-600">Vous avez pris votre commande</p>
+
+                        <p class="text-lg font-bold text-red-600 mt-1 flex items-center justify-center">
+                            "Bonne Appétit"
+                            <svg class="w-5 h-5 ml-2 text-gray-700" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2
+                                         1.343-2 3-2zM4 14s1-1 4-1 5 2 8 2 4-1 4-1"/>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+
+                <button class="ml-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+    <footer class="bg-gray-800 text-white pt-10 pb-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-red-500">EsprMeal</h3>
+                    <p class="text-sm text-gray-400 mb-6">Révolutionnez votre façon de manger avec nos plats 100% personnalisables. Des ingrédients frais, une livraison rapide, une expérience unique.</p>
+                    <h4 class="font-bold mb-2">Rejoignez notre communauté</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-full hover:opacity-80 transition duration-150"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-pink-500 rounded-full hover:opacity-80 transition duration-150"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-blue-400 rounded-full hover:opacity-80 transition duration-150"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-red-600 rounded-full hover:opacity-80 transition duration-150"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-red-500">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-red-400">Accueil</a></li>
+                        <li><a href="#" class="hover:text-red-400">Nos Restaurants</a></li>
+                        <li><a href="#" class="hover:text-red-400">Promotions</a></li>
+                        <li><a href="#" class="hover:text-red-400">Composer mon plat</a></li>
+                        <li><a href="#" class="hover:text-red-400">Avis clients</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-red-500">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-red-400">Livraison Express</a></li>
+                        <li><a href="#" class="hover:text-red-400">Carte Cadeau</a></li>
+                        <li><a href="#" class="hover:text-red-400">Programme Fidélité</a></li>
+                        <li><a href="#" class="hover:text-red-400">Devenir Partenaire</a></li>
+                        <li><a href="#" class="hover:text-red-400">Centre d'Aide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-red-500">Contact & Infos</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>1, 2 rue André Ampère -</li>
+                        <li>2083 - Pôle</li>
+                        <li>Technologique - El</li>
+                        <li>Ghazala.</li>
+                        <li>**+216 20308557**</li>
+                        <li>twinova@espritmeal.com</li>
+                        <li class="pt-2">Lun-Dim: 11h-23h</li>
+                    </ul>
+                    <h4 class="font-bold mb-4 text-red-500 mt-6">Newsletter</h4>
+                    <p class="text-sm text-gray-400 mb-3">Recevez nos meilleures offres et nouveautés en avant-première !</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email..." class="py-2 px-3 text-sm rounded-l-md w-full focus:outline-none text-gray-800">
+                        <button class="bg-red-600 text-white py-2 px-4 rounded-r-md hover:bg-red-700 transition duration-150"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">-10% sur votre première commande</p>
+                    <p class="text-xs text-gray-500">Alertes promos exclusives</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+                <p class="text-sm text-gray-400">
+                    © 2025 EsprMeal. Tous droits réservés. | 
+                    <a href="#" class="hover:text-red-400">Paiement sécurisé</a> | 
+                    <a href="#" class="hover:text-red-400">Livraison rapide</a> | 
+                    <a href="#" class="hover:text-red-400">Ingrédients frais</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
