@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Promos - EspritMeal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#CD1010',
+                        secondary: '#FF7043',
+                        success: '#288E3E',
+                    },
+                    borderRadius: {
+                        'xl': '16px',
+                        '2xl': '24px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .gradient-btn {
+            background: linear-gradient(to right, #CD1010, #FF7043);
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #CD1010 0%, #FF7043 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gradient-to-b from-gray-50 to-white text-gray-900 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between py-5 gap-8">
+                <div class="flex items-center gap-3">
+                    <img src="../../../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+                </div>
+                
+                <nav class="hidden lg:flex items-center gap-2">
+                    <a href="../../Accueil.html" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Accueil</span>
+                    </a>
+                    <a href="#restaurants" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Restaurants</span>
+                    </a>
+                    <a href="../Nour/index.html" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+                        
+                        <span>Promotions</span>
+                    </a>
+                    <a href="../../RepaSain/Composition.html" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Composition</span>
+                    </a>
+                    <a href="#contact" class="nav-link flex flex-col items-center gap-1 px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+                        
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..." class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <a href="../../Commandes/Yahia/vos_comm.html" class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+          </a>
+          <a href="../../signin/signup/signin.html" class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
+          </a>
+        </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-2xl mx-auto px-4 py-12">
+        <!-- Title with Pink Background -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-pink-100 px-20 py-4 rounded-lg">
+                <h1 class="text-3xl font-bold text-red-600 text-center">Nos promos</h1>
+            </div>
+        </div>
+        
+        <!-- Search Bar with Filter -->
+        <div class="mb-6">
+            <div class="relative">
+                <input 
+                    type="text" 
+                    placeholder="Rechercher une promotion..."
+                    class="w-full pl-4 pr-12 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                />
+                <button class="absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:text-secondary transition-colors">
+                    <i class="fas fa-filter text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Promo Items List -->
+        <div class="space-y-4 mb-12">
+            <!-- Code promo -->
+            <a href="codepromo.html" class="block gradient-btn text-white rounded-lg p-4 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold">Code promo</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+
+            <!-- Roue magique -->
+            <a href="rouemagique.html" class="block bg-white border-2 border-gray-200 rounded-lg p-4 transition-all hover:border-primary hover:shadow-md hover:-translate-y-0.5">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-gray-800">Roue magique</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Tirage au sort -->
+            <a href="tirageausort.html" class="block bg-white border-2 border-gray-200 rounded-lg p-4 transition-all hover:border-primary hover:shadow-md hover:-translate-y-0.5">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-gray-800">Tirage au sort</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Jeux -->
+            <a href="../Nour/jeux.html" class="block bg-white border-2 border-gray-200 rounded-lg p-4 transition-all hover:border-primary hover:shadow-md hover:-translate-y-0.5">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-gray-800">Jeux</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Système de fidélité -->
+            <a href="../Nour/historique.html" class="block bg-white border-2 border-gray-200 rounded-lg p-4 transition-all hover:border-primary hover:shadow-md hover:-translate-y-0.5">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-gray-800">Système de fidélité</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Votre Score -->
+            <a href="score.html" class="block bg-white border-2 border-gray-200 rounded-lg p-4 transition-all hover:border-primary hover:shadow-md hover:-translate-y-0.5">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-gray-800">Votre Score</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Promo Badge Icon -->
+         <div class="flex justify-center">
+            <img src="../../../public/promotions.png" alt="Promotions" class="w-24 h-24 object-contain" />
+        </div>
+    </main>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
+        
+        <div class="relative z-10 pt-20 pb-0">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                    <div class="lg:col-span-2">
+                        <div class="flex items-center gap-3 text-3xl font-extrabold mb-5">
+                            <i class="fas fa-utensils text-primary"></i>
+                            <span class="bg-gradient-primary bg-clip-text text-transparent">EspritMeal</span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed mb-8">
+                            Révolutionnez votre façon de manger avec nos plats 100% personnalisables. 
+                            Des ingrédients frais, une livraison rapide, une expérience unique.
+                        </p>
+                        <div>
+                            <span class="block text-white font-semibold mb-4 text-lg">Rejoignez notre communauté</span>
+                            <div class="flex gap-3 flex-wrap">
+                                <a href="https://facebook.com/espritmeal" class="w-12 h-12 rounded-full bg-blue-600/20 hover:bg-blue-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://instagram.com/espritmeal" class="w-12 h-12 rounded-full bg-pink-600/20 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://twitter.com/espritmeal" class="w-12 h-12 rounded-full bg-blue-400/20 hover:bg-blue-400 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://tiktok.com/@espritmeal" class="w-12 h-12 rounded-full bg-white/10 hover:bg-black flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                                <a href="https://youtube.com/espritmeal" class="w-12 h-12 rounded-full bg-red-600/20 hover:bg-red-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">Navigation</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#accueil" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Accueil</a></li>
+                            <li><a href="#restaurants" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Nos Restaurants</a></li>
+                            <li><a href="#promotions" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Promotions</a></li>
+                            <li><a href="RepaSain/Composition.html" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Composer mon plat</a></li>
+                            <li><a href="#avis" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Avis clients</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#livraison" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Livraison Express</a></li>
+                            <li><a href="#carte-cadeau" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Carte Cadeau</a></li>
+                            <li><a href="#programme-fidelite" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Programme Fidélité</a></li>
+                            <li><a href="#partenaires" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Devenir Partenaire</a></li>
+                            <li><a href="#aide" class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Centre d'Aide</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">Contact & Infos</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                                <span>123 Rue de la République<br>75001 Paris, France</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-phone text-primary"></i>
+                                <span>+33 1 23 45 67 89</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-envelope text-primary"></i>
+                                <span>contact@espritmeal.fr</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-clock text-primary"></i>
+                                <span>Lun-Dim: 11h-23h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 pt-8 pb-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="text-center md:text-left">
+                            <p class="text-gray-400 text-sm mb-3">&copy; 2025 EspritMeal. Tous droits réservés.</p>
+                            <div class="flex flex-wrap justify-center md:justify-start gap-5 text-sm">
+                                <a href="#mentions-legales" class="text-gray-400 hover:text-secondary transition-colors">Mentions légales</a>
+                                <a href="#cgu" class="text-gray-400 hover:text-secondary transition-colors">CGU</a>
+                                <a href="#confidentialite" class="text-gray-400 hover:text-secondary transition-colors">Politique de confidentialité</a>
+                                <a href="#cookies" class="text-gray-400 hover:text-secondary transition-colors">Cookies</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 flex-wrap justify-center">
+                            <div class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-shield-alt text-primary"></i>
+                                <span>Paiement sécurisé</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-truck text-primary"></i>
+                                <span>Livraison rapide</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-400 text-sm">
+                                <i class="fas fa-leaf text-primary"></i>
+                                <span>Ingrédients frais</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
