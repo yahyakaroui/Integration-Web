@@ -22,7 +22,12 @@
 > Cette section présente les interfaces développées par chaque membre de l’équipe dans l’application **Esprit Meal**.
 
 ### 🔹 Interface – Yahya Karoui
-![Interface Yahya](screenshots/yahya_interface.png)
+![Interface Yahya](public/1.png)
+![Interface Yahya](public/2.png)
+![Interface Yahya](public/3.png)
+![Interface Yahya](public/4.png)
+![Interface Yahya](public/5.png)
+![Interface Yahya](public/6.png)
 
 ---
 
