@@ -1,11 +1,737 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=src/Accueil.html">
-  <title>Redirection</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EspritMeal - Votre cuisine personnalisée</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+          },
+          colors: {
+            primary: '#CD1010',
+            secondary: '#FF7043',
+            success: '#288E3E',
+          },
+          borderRadius: {
+            'xl': '16px',
+            '2xl': '24px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    @keyframes phoneFloat {
+
+      0%,
+      100% {
+        transform: rotate(5deg) translateY(0px);
+      }
+
+      50% {
+        transform: rotate(5deg) translateY(-10px);
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-phoneFloat {
+      animation: phoneFloat 4s ease-in-out infinite;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #CD1010, #FF7043);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, #CD1010 0%, #FF7043 100%);
+    }
+
+    .bg-gradient-secondary {
+      background: linear-gradient(135deg, #FF7043 0%, #FFB74D 100%);
+    }
+
+    .bg-gradient-success {
+      background: linear-gradient(135deg, #288E3E 0%, #4CAF50 100%);
+    }
+  </style>
 </head>
-<body>
-  <p>Redirection vers la page d'accueil...</p>
+
+<body class="font-sans bg-gradient-to-b from-gray-50 to-white text-gray-900 overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between py-5 gap-4">
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <img src="../public/LogoEsprimeal.png" alt="EspritMeal" class="h-12 w-auto" />
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-2">
+          <a href="Accueil.html" class="nav-link px-5 py-3 text-sm font-medium text-primary bg-primary/10 rounded-xl transition-all hover:bg-primary/20 hover:-translate-y-0.5">
+            <span>Accueil</span>
+          </a>
+          <a href="#restaurants" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Restaurants</span>
+          </a>
+          <a href="Promotions/Nour/index.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Promotions</span>
+          </a>
+          <a href="RepaSain/Composition.html" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+            <span>Composition</span>
+          </a>
+          <a href="#contact" class="nav-link px-5 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:text-secondary hover:bg-secondary/10 hover:-translate-y-0.5">
+
+            <span>Contact</span>
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-4 flex-shrink-0">
+          <div class="hidden lg:flex items-center relative">
+            <i class="fas fa-search absolute left-4 text-gray-500 z-10"></i>
+            <input type="text" placeholder="Rechercher un plat..."
+              class="pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl w-64 xl:w-80 text-sm bg-white transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+          </div>
+          <a href="Commandes/Yahia/vos_comm.html"
+          
+            class="relative flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span
+              class="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">2</span>
+           
+        </a>
+          <a href="signin/signup/signin.html"
+            class="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-xl transition-all hover:bg-secondary/10 hover:text-secondary hover:-translate-y-0.5">
+            <i class="fas fa-user-circle text-xl"></i>
+      </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="accueil"
+    class="relative min-h-screen flex items-center bg-gradient-primary text-white overflow-hidden py-20">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"
+        class="w-full h-full"></div>
+    </div>
+
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute text-6xl opacity-10 animate-float" style="top: 20%; left: 10%; animation-delay: 0s;">🍕</div>
+      <div class="absolute text-6xl opacity-10 animate-float" style="top: 60%; right: 15%; animation-delay: 2s;">🍔
+      </div>
+      <div class="absolute text-6xl opacity-10 animate-float" style="top: 30%; right: 25%; animation-delay: 4s;">🥪
+      </div>
+      <div class="absolute text-6xl opacity-10 animate-float" style="bottom: 20%; left: 20%; animation-delay: 1s;">🍟
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="text-center lg:text-left">
+          <span
+            class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <i class="fas fa-star"></i>
+            Nouveau concept
+          </span>
+          <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+            Compose ton repas <span class="text-orange-100">parfait</span>
+          </h1>
+          <p class="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
+            Révolutionnez votre façon de manger ! Créez des plats uniques avec nos ingrédients frais, livrés en 15
+            minutes chrono.
+          </p>
+
+          <div class="flex flex-wrap gap-8 mb-10 justify-center lg:justify-start">
+            <div class="flex items-center gap-2 text-white font-medium">
+              <i class="fas fa-users text-white/70 text-xl"></i>
+              <span><strong>50K+</strong> clients</span>
+            </div>
+            <div class="flex items-center gap-2 text-white font-medium">
+              <i class="fas fa-clock text-white/70 text-xl"></i>
+              <span><strong>15min</strong> livraison</span>
+            </div>
+            <div class="flex items-center gap-2 text-white font-medium">
+              <i class="fas fa-star text-white/70 text-xl"></i>
+              <span><strong>4.9/5</strong> étoiles</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+            <a href="RepaSain/Composition.html"
+              class="inline-flex items-center justify-center gap-3 bg-gradient-primary text-white px-10 py-5 rounded-xl font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-2xl relative overflow-hidden group">
+              <span
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></span>
+              <i class="fas fa-magic relative z-10"></i>
+              <span class="relative z-10">Commencer maintenant</span>
+            </a>
+            <button
+              class="inline-flex items-center justify-center gap-3 bg-white/20 backdrop-blur-md text-white px-8 py-5 border-2 border-white/30 rounded-xl font-semibold transition-all hover:bg-white/30 hover:border-white/50 hover:-translate-y-0.5">
+              <i class="fas fa-play"></i>
+              Voir comment ça marche
+            </button>
+          </div>
+        </div>
+
+        <div class="flex justify-center items-center relative">
+          <div class="w-72 h-[560px] bg-gray-900 rounded-[32px] p-2 shadow-2xl animate-phoneFloat">
+            <div class="w-full h-full bg-white rounded-3xl overflow-hidden">
+              <div class="p-5 h-full bg-gradient-to-b from-gray-50 to-gray-100">
+                <div class="flex justify-between items-center mb-6">
+                  <div class="font-bold text-primary text-lg">EspritMeal</div>
+                  <div class="text-2xl">🛒</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="bg-white rounded-xl h-20 flex items-center justify-center text-4xl shadow-md">🍕</div>
+                  <div class="bg-white rounded-xl h-20 flex items-center justify-center text-4xl shadow-md">🍔</div>
+                  <div class="bg-white rounded-xl h-20 flex items-center justify-center text-4xl shadow-md">🌯</div>
+                  <div class="bg-white rounded-xl h-20 flex items-center justify-center text-4xl shadow-md">🍟</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="inline-block bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-semibold mb-4">Pourquoi
+          nous ?</span>
+        <h2 class="text-4xl lg:text-6xl font-extrabold mb-4">
+          L'expérience culinaire <span class="text-gradient">réinventée</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Découvrez pourquoi des milliers de clients nous font confiance chaque jour
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="bg-white p-10 rounded-3xl text-center shadow-lg border border-gray-200 transition-all hover:-translate-y-2 hover:shadow-2xl">
+          <div
+            class="w-20 h-20 bg-gradient-primary text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+            <i class="fas fa-magic"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">100% Personnalisable</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Créez votre plat idéal en choisissant chaque ingrédient selon vos envies et préférences alimentaires.
+          </p>
+          <div class="flex flex-col items-center gap-1 p-5 bg-gray-50 rounded-xl">
+            <span class="text-5xl font-extrabold text-primary">∞</span>
+            <span class="text-sm text-gray-600 font-medium">Combinaisons possibles</span>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-10 rounded-3xl text-center shadow-lg border-2 border-primary transition-all hover:-translate-y-2 hover:shadow-2xl relative">
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full text-xs font-semibold">
+            Le + populaire
+          </div>
+          <div
+            class="w-20 h-20 bg-gradient-primary text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Livraison Express</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Vos plats fraîchement préparés livrés en moins de 15 minutes partout dans la ville.
+          </p>
+          <div class="flex flex-col items-center gap-1 p-5 bg-gray-50 rounded-xl">
+            <span class="text-5xl font-extrabold text-primary">15min</span>
+            <span class="text-sm text-gray-600 font-medium">Temps moyen</span>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-10 rounded-3xl text-center shadow-lg border border-gray-200 transition-all hover:-translate-y-2 hover:shadow-2xl">
+          <div
+            class="w-20 h-20 bg-gradient-primary text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Ingrédients Frais</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Sourcing quotidien chez nos producteurs locaux pour une qualité et fraîcheur optimales.
+          </p>
+          <div class="flex flex-col items-center gap-1 p-5 bg-gray-50 rounded-xl">
+            <span class="text-5xl font-extrabold text-primary">100%</span>
+            <span class="text-sm text-gray-600 font-medium">Produits frais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTAURANTS LIST -->
+  <section id="restaurants" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="inline-block bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-semibold mb-4">Nos
+          partenaires</span>
+        <h2 class="text-4xl lg:text-6xl font-extrabold mb-4">
+          Restaurants <span class="text-gradient">d'exception</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Découvrez notre sélection de chefs partenaires passionnés
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-200 transition-all hover:-translate-y-2 hover:shadow-2xl group">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Pizza Napoli"
+              class="w-full h-full object-cover transition-transform group-hover:scale-105" />
+            <div
+              class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-sm font-semibold">
+              ⭐ 4.8
+            </div>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#"
+                class="border-2 border-white text-white px-6 py-3 rounded-xl font-semibold transition-all hover:bg-white hover:text-primary">Explorer</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <h4 class="text-xl font-bold text-gray-900">Pizza Napoli</h4>
+              <span class="flex items-center gap-1 text-gray-600 text-sm">
+                <i class="fas fa-clock"></i>
+                15-20 min
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4">Authentique cuisine italienne • Pâtes fraîches</p>
+            <div class="flex items-center gap-2 text-gray-600 text-sm">
+              <i class="fas fa-pizza-slice text-primary"></i>
+              <span>Spécialités: Pizza, Pâtes</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-primary transition-all hover:-translate-y-2 hover:shadow-2xl group md:scale-105">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Burger House"
+              class="w-full h-full object-cover transition-transform group-hover:scale-105" />
+            <div
+              class="absolute top-4 right-4 bg-gradient-primary text-white px-3 py-1.5 rounded-full text-sm font-semibold">
+              🔥 Populaire
+            </div>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#"
+                class="border-2 border-white text-white px-6 py-3 rounded-xl font-semibold transition-all hover:bg-white hover:text-primary">Explorer</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <h4 class="text-xl font-bold text-gray-900">Burger House</h4>
+              <span class="flex items-center gap-1 text-gray-600 text-sm">
+                <i class="fas fa-clock"></i>
+                12-18 min
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4">Burgers gourmets • Ingrédients premium</p>
+            <div class="flex items-center gap-2 text-gray-600 text-sm">
+              <i class="fas fa-hamburger text-primary"></i>
+              <span>Spécialités: Burgers, Frites</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-200 transition-all hover:-translate-y-2 hover:shadow-2xl group">
+          <div class="relative h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?w=400" alt="Panuozzo King"
+              class="w-full h-full object-cover transition-transform group-hover:scale-105" />
+            <div
+              class="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-sm font-semibold">
+              ⭐ 4.6
+            </div>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#"
+                class="border-2 border-white text-white px-6 py-3 rounded-xl font-semibold transition-all hover:bg-white hover:text-primary">Explorer</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <h4 class="text-xl font-bold text-gray-900">Panuozzo King</h4>
+              <span class="flex items-center gap-1 text-gray-600 text-sm">
+                <i class="fas fa-clock"></i>
+                10-15 min
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4">Tradition napolitaine • Sandwiches artisanaux</p>
+            <div class="flex items-center gap-2 text-gray-600 text-sm">
+              <i class="fas fa-bread-slice text-primary"></i>
+              <span>Spécialités: Panuozzo, Paninis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button
+          class="inline-flex items-center gap-3 bg-gray-100 text-gray-700 px-8 py-4 rounded-xl font-semibold transition-all hover:bg-gray-200 hover:-translate-y-0.5">
+          Voir tous les restaurants
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROMOTIONS -->
+  <section id="promos" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-extrabold mb-4">Offres du moment</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="relative bg-gradient-primary p-8 rounded-3xl text-center text-white shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+          <div class="absolute inset-0 opacity-5"
+            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E&quot;)">
+          </div>
+          <div class="absolute -top-3 right-6 bg-white/90 text-primary px-4 py-2 rounded-full text-sm font-bold z-10">
+            -30%
+          </div>
+          <div class="relative z-10">
+            <h4 class="text-2xl font-bold mb-3">Pizza Personnalisée</h4>
+            <p class="text-white/90 mb-5">Valable jusqu'au 15 nov.</p>
+            <a href="#"
+              class="inline-block bg-white text-primary px-6 py-3 rounded-xl font-semibold transition-all hover:bg-gray-100">Profiter</a>
+          </div>
+        </div>
+
+        <div
+          class="relative bg-gradient-success p-8 rounded-3xl text-center text-white shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+          <div class="absolute inset-0 opacity-5"
+            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E&quot;)">
+          </div>
+          <div class="absolute -top-3 right-6 bg-white/90 text-success px-4 py-2 rounded-full text-sm font-bold z-10">
+            GRATUIT
+          </div>
+          <div class="relative z-10">
+            <h4 class="text-2xl font-bold mb-3">Livraison offerte</h4>
+            <p class="text-white/90 mb-5">Sur toute commande > 15€</p>
+            <a href="#"
+              class="inline-block bg-white text-success px-6 py-3 rounded-xl font-semibold transition-all hover:bg-gray-100">Profiter</a>
+          </div>
+        </div>
+
+        <div
+          class="relative bg-gradient-secondary p-8 rounded-3xl text-center text-white shadow-lg transition-all hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+          <div class="absolute inset-0 opacity-5"
+            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E&quot;)">
+          </div>
+          <div
+            class="absolute -top-3 right-6 bg-white/90 text-orange-600 px-4 py-2 rounded-full text-sm font-bold z-10">
+            2=3
+          </div>
+          <div class="relative z-10">
+            <h4 class="text-2xl font-bold mb-3">Burger + Frites</h4>
+            <p class="text-white/90 mb-5">Offre valable le mercredi</p>
+            <a href="#"
+              class="inline-block bg-white text-orange-600 px-6 py-3 rounded-xl font-semibold transition-all hover:bg-gray-100">Profiter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-extrabold mb-4">Ils parlent de nous</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:border-primary">
+          <div class="absolute -top-2 left-6 text-7xl text-primary font-serif leading-none">"</div>
+          <p class="italic text-lg text-gray-900 mb-5 pt-5 leading-relaxed">
+            "Enfin une appli où je peux vraiment personnaliser mon repas !"
+          </p>
+          <div class="text-yellow-500 text-xl mb-3">★★★★★</div>
+          <strong class="text-primary font-semibold">— Sarah M.</strong>
+        </div>
+
+        <div
+          class="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:border-primary">
+          <div class="absolute -top-2 left-6 text-7xl text-primary font-serif leading-none">"</div>
+          <p class="italic text-lg text-gray-900 mb-5 pt-5 leading-relaxed">
+            "Livraison rapide et plat chaud, parfait !"
+          </p>
+          <div class="text-yellow-500 text-xl mb-3">★★★★☆</div>
+          <strong class="text-primary font-semibold">— Karim L.</strong>
+        </div>
+
+        <div
+          class="relative bg-white p-8 rounded-3xl shadow-lg border border-gray-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:border-primary">
+          <div class="absolute -top-2 left-6 text-7xl text-primary font-serif leading-none">"</div>
+          <p class="italic text-lg text-gray-900 mb-5 pt-5 leading-relaxed">
+            "Le panuozzo est une tuerie, je recommande !"
+          </p>
+          <div class="text-yellow-500 text-xl mb-3">★★★★★</div>
+          <strong class="text-primary font-semibold">— Léa T.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-extrabold mb-4">Contactez-nous</h2>
+      </div>
+      <form class="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-lg space-y-5">
+        <input type="text" placeholder="Votre nom" required
+          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-base transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+        <input type="email" placeholder="Votre email" required
+          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-base transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10" />
+        <textarea placeholder="Votre message" rows="5" required
+          class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-base resize-y min-h-[120px] transition-all focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10"></textarea>
+        <button type="submit"
+          class="w-full bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-xl">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-5"
+      style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)">
+    </div>
+
+    <div class="relative z-10 pt-20 pb-0">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 text-3xl font-extrabold mb-5">
+              <i class="fas fa-utensils text-primary"></i>
+              <span class="text-gradient">EspritMeal</span>
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8">
+              Révolutionnez votre façon de manger avec nos plats 100% personnalisables.
+              Des ingrédients frais, une livraison rapide, une expérience unique.
+            </p>
+            <div>
+              <span class="block text-white font-semibold mb-4 text-lg">Rejoignez notre communauté</span>
+              <div class="flex gap-3 flex-wrap">
+                <a href="https://facebook.com/espritmeal"
+                  class="w-12 h-12 rounded-full bg-blue-600/20 hover:bg-blue-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/espritmeal"
+                  class="w-12 h-12 rounded-full bg-pink-600/20 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/espritmeal"
+                  class="w-12 h-12 rounded-full bg-blue-400/20 hover:bg-blue-400 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://tiktok.com/@espritmeal"
+                  class="w-12 h-12 rounded-full bg-white/10 hover:bg-black flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://youtube.com/espritmeal"
+                  class="w-12 h-12 rounded-full bg-red-600/20 hover:bg-red-600 flex items-center justify-center text-white text-lg transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">
+              Navigation</h4>
+            <ul class="space-y-3">
+              <li><a href="#accueil"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Accueil</a>
+              </li>
+              <li><a href="#restaurants"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Nos
+                  Restaurants</a></li>
+              <li><a href="#promotions"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Promotions</a>
+              </li>
+              <li><a href="RepaSain/Composition.html"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Composer
+                  mon plat</a></li>
+              <li><a href="#avis"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Avis
+                  clients</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">
+              Services</h4>
+            <ul class="space-y-3">
+              <li><a href="#livraison"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Livraison
+                  Express</a></li>
+              <li><a href="#carte-cadeau"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Carte
+                  Cadeau</a></li>
+              <li><a href="#programme-fidelite"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Programme
+                  Fidélité</a></li>
+              <li><a href="#partenaires"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Devenir
+                  Partenaire</a></li>
+              <li><a href="#aide"
+                  class="text-gray-400 hover:text-secondary hover:translate-x-1 transition-all inline-block">Centre
+                  d'Aide</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-white text-lg font-bold mb-5 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-gradient-primary after:rounded">
+              Contact & Infos</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-gray-400 text-sm">
+                <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                <span>123 Rue de la République<br>75001 Paris, France</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-phone text-primary"></i>
+                <span>+33 1 23 45 67 89</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-envelope text-primary"></i>
+                <span>contact@espritmeal.fr</span>
+              </li>
+              <li class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-clock text-primary"></i>
+                <span>Lun-Dim: 11h-23h</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 pb-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+              <p class="text-gray-400 text-sm mb-3">&copy; 2025 EspritMeal. Tous droits réservés.</p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-5 text-sm">
+                <a href="#mentions-legales" class="text-gray-400 hover:text-secondary transition-colors">Mentions
+                  légales</a>
+                <a href="#cgu" class="text-gray-400 hover:text-secondary transition-colors">CGU</a>
+                <a href="#confidentialite" class="text-gray-400 hover:text-secondary transition-colors">Politique de
+                  confidentialité</a>
+                <a href="#cookies" class="text-gray-400 hover:text-secondary transition-colors">Cookies</a>
+              </div>
+            </div>
+            <div class="flex gap-6 flex-wrap justify-center">
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-shield-alt text-primary"></i>
+                <span>Paiement sécurisé</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-truck text-primary"></i>
+                <span>Livraison rapide</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 text-sm">
+                <i class="fas fa-leaf text-primary"></i>
+                <span>Ingrédients frais</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation fluide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          // Mise à jour des liens actifs
+          document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('text-primary', 'bg-primary/10');
+            link.classList.add('text-gray-600');
+          });
+
+          if (this.classList.contains('nav-link')) {
+            this.classList.remove('text-gray-600');
+            this.classList.add('text-primary', 'bg-primary/10');
+          }
+        }
+      });
+    });
+
+    // Highlight active section on scroll
+    window.addEventListener('scroll', function () {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary', 'bg-primary/10');
+        link.classList.add('text-gray-600');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.remove('text-gray-600');
+          link.classList.add('text-primary', 'bg-primary/10');
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
