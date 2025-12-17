@@ -9,7 +9,7 @@
     "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "keywords": [],
   "author": "",
